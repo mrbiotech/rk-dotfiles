@@ -1,0 +1,32 @@
+Config(
+	bars: {
+		"bar-left": (
+			pos_x: 0,
+			pos_y: 1000,
+			modules_left: [
+				I3,
+				Custom((
+					name: "custom-ram",
+					exec: ["sh","top"],
+					interval: 1000,
+				))
+			],
+			modules_right: [
+				Cpu,
+				Mpris,
+				Alsa,
+				Clock,
+			],
+		),
+		"bar-right": (
+			pos_x: 1920,
+			pos_y: 1000,
+			modules_left: [
+				I3,
+				Mpris,
+				Alsa,
+				Clock,
+			],
+		)
+	},
+)

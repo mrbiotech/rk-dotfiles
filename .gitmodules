@@ -1,0 +1,96 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "emmet"]
+	path = vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+	ignore = dirty
+[submodule "nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+	ignore = dirty
+[submodule "vim-autopep8"]
+	path = vim/bundle/vim-autopep
+	url = https://github.com/tell-k/vim-autopep8.git
+	ignore = dirty
+[submodule "vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
+	ignore = dirty
+[submodule "vim-sass-colors"]
+	path = vim/bundle/vim-sass-colors
+	url = https://github.com/shmargum/vim-sass-colors.git
+	ignore = dirty
+[submodule "vimwiki"]
+	path = vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+	ignore = dirty
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+	ignore = dirty
+[submodule "vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+	ignore = dirty
+[submodule "colorizer"]
+	path = vim/bundle/colorizer
+	url = https://github.com/lilydjwg/colorizer.git
+	ignore = dirty
+[submodule "surround"]
+	path = vim/bundle/surround
+	url = https://tpope.io/vim/surround.git
+	ignore = dirty
+[submodule "VOoM"]
+	path = vim/bundle/VOoM
+	url = https://github.com/vim-voom/VOoM.git
+	ignore = dirty
+[submodule "vim/bundle/emmet-vim"]
+	path = vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+	ignore = dirty
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+	ignore = dirty
+[submodule "vim/bundle/vim-autopep8"]
+	path = vim/bundle/vim-autopep8
+	url = https://github.com/tell-k/vim-autopep8.git
+	ignore = dirty
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+	ignore = dirty
+[submodule "vim/bundle/vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
+	ignore = dirty
+[submodule "vim/bundle/vim-sass-colors"]
+	path = vim/bundle/vim-sass-colors
+	url = https://github.com/shmargum/vim-sass-colors.git
+	ignore = dirty
+[submodule "vim/bundle/vimwiki"]
+	path = vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+	ignore = dirty
+[submodule "vim/bundle/vim-airline-themes"]
+	path = vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+	ignore = dirty
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = https://tpope.io/vim/surround.git
+	ignore = dirty
+[submodule "vim/bundle/VOoM"]
+	path = vim/bundle/VOoM
+	url = https://github.com/vim-voom/VOoM.git
+	ignore = dirty
+[submodule "vim/bundle/vim-css-color"]
+	path = vim/bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
+	ignore = dirty
+[submodule "fluxbox/styles"]
+	path = fluxbox/styles
+	url = https://github.com/mrbiotech/rk-fluxbox-themes.git
+	ignore = dirty

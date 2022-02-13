@@ -1,0 +1,21 @@
+# Configuration for Picom compositor
+# -r, --shadow-radius=RADIUS
+# -o, --shadow-opacity=OPACITY
+# -l, --shadow-offset-x=OFFSET
+# -t, --shadow-offset-y=OFFSET
+# -I, --fade-in-step=OPACITY_STEP
+# -O, --fade-out-step=OPACITY_STEP
+# -f, --fading
+# -c, --shadow
+# -b, --daemon
+# --corner-radius VALUE
+# --round-borders VALUE
+# --round-borders-exclude CONDITION
+# --rounced-corders-exclude CONDITION
+# --opacity-rule OPACITY:'CONDITION'
+#     --opacity-rule 100:name *="polybar"
+# --backend BACKEND
+#     --backend glx
+
+daemon = true
+shadow = true

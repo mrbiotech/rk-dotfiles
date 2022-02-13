@@ -1,0 +1,126 @@
+# http://github.com/jigish/slate
+#
+# Some config options
+# Options relevant to Window hints
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+# config gridBackgroundColor "30;30;30;0.8"
+# config gridRoundedCornerSize 0
+# config gridRoundedCornerSize 0
+# config gridCellBackgroundColor "50;50;50;0.8"
+# config gridCellSelectedColor "150;150;150;0.8"
+ 
+# Abstract positions
+alias full move screenOriginX+20;screenOriginY+20 screenSizeX-40;screenSizeY-40
+alias mini move screenOriginX+50;screenOriginY+50 screenSizeX-100;screenSizeY-100
+alias lefthalf move screenOriginX+20;screenOriginY+20 screenSizeX/2-30;screenSizeY-40
+alias righthalf move screenOriginX+screenSizeX/2+10;screenOriginY+20 screenSizeX/2-30;screenSizeY-40
+alias topleft move screenOriginX+20;screenOriginY+20 screenSizeX/2-30;screenSizeY/2-30
+alias topright move screenOriginX+screenSizeX/2+10;screenOriginY+20 screenSizeX/2-30;screenSizeY/2-30
+alias bottomleft move screenOriginX+20;screenOriginY+screenSizeY/2+10 screenSizeX/2-30;screenSizeY/2-30
+alias bottomright move screenOriginX+screenSizeX/2+10;screenOriginY+screenSizeY/2+10 screenSizeX/2-30;screenSizeY/2-30
+
+alias tophalf move screenOriginX+20;screenOriginY+20 screenSizeX-40;screenSizeY/2-30
+alias bottomhalf move screenOriginX+20;screenOriginY+screenSizeY/2+10 screenSizeX-40;screenSizeY/2-30
+
+alias leftthird move screenOriginX+20;screenOriginY+20 screenSizeX/3-30;screenSizeY-40
+alias centerthird move screenOriginX+screenSizeX/3+10;screenOriginY+20 screenSizeX/3-20;screenSizeY-40 
+alias rightthird move screenOriginX+screenSizeX*2/3+10;screenOriginY+20 screenSizeX/3-30;screenSizeY-40
+alias lefttwothirds move screenOriginX+20;screenOriginY+20 screenSizeX*0.666-30;screenSizeY-40
+alias righttwothirds move screenOriginX+screenSizeX/3+10;screenOriginY+20 screenSizeX*0.666-30;screenSizeY-40
+
+alias upperleft move screenOriginX;screenOriginY screenSizeX/2;screenSizeY/2
+alias upperright move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY/2
+alias lowerleft move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+alias lowerright move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
+
+alias vertquarter1 move screenOriginX;screenOriginY screenSizeX/4;screenSizeY
+alias vertquarter2 move screenOriginX+screenSizeX/4;screenOriginY screenSizeX/4;screenSizeY
+alias vertquarter3 move screenOriginX+2*screenSizeX/4;screenOriginY screenSizeX/4;screenSizeY
+alias vertquarter4 move screenOriginX+3*screenSizeX/4;screenOriginY screenSizeX/4;screenSizeY
+alias vertquarterleft move screenOriginX;screenOriginY screenSizeX*0.75;screenSizeY
+alias vertquarterright move screenOriginX+screenSizeX/4;screenOriginY screenSizeX*0.75;screenSizeY
+alias vertquartercenter move screenOriginX+screenSizeX/4;screenOriginY screenSizeX/2;screenSizeY
+
+alias minileft move screenOriginX+100;screenOriginY+100 screenSizeX/2-150;screenSizeY-200
+alias miniright move screenOriginX+screenSizeX/2+50;screenOriginY+100 screenSizeX/2-150;screenSizeY-200
+
+alias widefull move screenOriginX+100;screenOriginY+100 screenSizeX-200;screenSizeY-200
+alias widelefthalf move screenOriginX+100;screenOriginY+100 screenSizeX/2-150;screenSizeY-200
+alias widerighthalf move screenOriginX+screenSizeX/2+50;screenOriginY+100 screenSizeX/2-150;screenSizeY-200
+alias widetopleft move screenOriginX+100;screenOriginY+100 screenSizeX/2-150;screenSizeY/2-150
+alias widetopright move screenOriginX+screenSizeX/2+50;screenOriginY+100 screenSizeX/2-150;screenSizeY/2-150
+alias widebottomleft move screenOriginX+20;screenOriginY+screenSizeY/2+50 screenSizeX/2-150;screenSizeY/2-150
+alias widebottomright move screenOriginX+screenSizeX/2+50;screenOriginY+screenSizeY/2+50 screenSizeX/2-150;screenSizeY/2-150
+
+alias tophalf move screenOriginX+20;screenOriginY+20 screenSizeX-40;screenSizeY/2-30
+alias bottomhalf move screenOriginX+20;screenOriginY+screenSizeY/2+10 screenSizeX-40;screenSizeY/2-30
+
+# Bind window hinting to cmd+e, using the given letters
+#bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN # use whatever keys you want
+ 
+# Press cmd+g to get a grid, drag on that 
+# grid to determine the size of an app
+# bind g:cmd grid padding:1 0:12,4 1:12,4
+ 
+# Use the Slate task switcher (beta)
+# bind tab:cmd switch
+ 
+# Send a program to a particular screen
+bind 1:alt,ctrl throw 0 resize
+bind 2:alt,ctrl throw 1 resize
+bind 3:alt,ctrl throw 2 resize
+bind 4:alt,ctrl throw 3 resize
+ 
+# Use the keys below to put the selected window
+bind right:ctrl;alt     ${righthalf}
+bind left:ctrl;alt      ${lefthalf}
+bind up:ctrl;alt        ${full}
+bind up:ctrl;alt;cmd    ${tophalf}
+bind down:ctrl;alt;cmd  ${bottomhalf}
+
+bind pad7:ctrl;alt      ${topleft}
+bind pad9:ctrl;alt      ${topright}
+bind pad1:ctrl;alt      ${bottomleft}
+bind pad3:ctrl;alt      ${bottomright}
+bind ;:ctrl;alt		${topleft}
+bind ':ctrl;alt		${topright}
+bind .:ctrl;alt		${bottomleft}
+bind /:ctrl;alt		${bottomright}
+bind ;:ctrl;alt;cmd	${widetopleft}
+bind ':ctrl;alt;cmd	${widetopright}
+bind .:ctrl;alt;cmd	${widebottomleft}
+bind /:ctrl;alt;cmd	${widebottomright}
+
+bind pad4:ctrl;alt      ${leftthird}
+bind pad5:ctrl;alt      ${centerthird}
+bind pad6:ctrl;alt      ${rightthird}
+bind pad8:ctrl;alt      ${lefttwothirds}
+bind pad2:ctrl;alt      ${righttwothirds}
+
+bind [:ctrl;alt         ${leftthird}
+bind ]:ctrl;alt         ${centerthird}
+bind backslash:ctrl;alt ${rightthird}
+bind -:ctrl;alt         ${lefttwothirds}
+bind =:ctrl;alt         ${righttwothirds}
+
+bind 1:ctrl;alt;cmd	${vertquarter1}
+bind 2:ctrl;alt;cmd	${vertquarter2}
+bind 3:ctrl;alt;cmd	${vertquarter3}
+bind 4:ctrl;alt;cmd	${vertquarter4}
+bind 5:ctrl;alt;cmd	${vertquarterleft}
+bind 6:ctrl;alt;cmd	${vertquartercenter}
+bind 7:ctrl;alt;cmd	${vertquarterright}
+bind 0:ctrl;alt;cmd     ${mini}
+bind left:ctrl;alt;cmd  ${minileft}
+bind right:ctrl;alt;cmd ${miniright}
+
+# Focus Bindings
+# Shift focus to the app to the
+#bind right:cmd    focus right
+#bind left:cmd     focus left
+#bind up:cmd       focus up
+#bind down:cmd     focus down
+#bind up:cmd;alt   focus behind
+#bind down:cmd;alt focus behind

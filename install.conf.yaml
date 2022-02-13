@@ -1,0 +1,103 @@
+# Overriding default settings
+- defaults:
+    link:
+        create: true
+        relink: true
+        force: true
+
+- clean:
+    ~:
+      force: true
+      recursive: false
+    ~/.config:
+      force: true
+      recursive: true
+
+# Run shell commands
+- shell:
+    - [git submodule init, Initializing submodules]
+    - [git submodule update --remote --recursive, Updating submodules...]
+    - [git submodule sync --recursive, Syncing submodules...]
+    - [git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d, Snatching latest spacemacs]
+      # - [cd ~/dotfiles/prezto && git submodule init && git submodule update --remote, Initializing ZPrezto...]
+      #- [sudo cp ~/dotfiles/bash_profile /root/.bash_profile, Installing root .bash_profile]
+      #- [sudo cp ~/dotfiles/bashrc /root/.bashrc, Installing root .bashrc]
+      #- [sudo cp ~/dotfiles/profile /root/.profile, Installing root .profile]
+      #- [sudo cp -fr ~/dotfiles/vim /root/.vim, Installing root .vim/]
+      #- [sudo cp ~/dotfiles/root_vimrc /root/.vimrc, Installing root .vimrc]
+
+# Symlink my dotfiles
+- link:
+    ~/.alacritty.yml: alacritty.yml
+    ~/.aliases.sh: aliases.sh
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
+    ~/.config/dunst/dunstrc:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: dunstrc
+    ~/.config/i3:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: i3
+    ~/.config/i3status:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: i3status
+    ~/.config/openbox:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: openbox
+    ~/.config/picom.conf:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: picom.conf.MINE
+    ~/.config/polybar:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: polybar
+    ~/.config/ranger: ranger
+    ~/.config/sakura: sakura
+    ~/.config/starship.toml: starship.toml
+    ~/.config/tint2:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: tint2
+    ~/.config/yabar:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path:  yabar
+    ~/.gitconfig: gitconfig
+    ~/.irssi: irssi
+    ~/.npmrc: npmrc
+    ~/.ptpython/config.py: ptpython-config.py
+    ~/maintenance.sh:
+       if: '[ uname = Darwin ]'
+       path: maintenance.sh
+    ~/.Xmodmap:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: Xmodmap
+    ~/.screenrc: screenrc
+    ~/.spacemacs: spacemacs
+    ~/.stalonetrayrc:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: stalonetrayrc
+    ~/.tmux.conf: tmux.conf
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.config/yetanotherbar/config.ron:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: yetanotherbar.ron
+    ~/.config/yetanotherbar/style.css:
+       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+       path: yetanotherbar.style.css
+    # ~/.bash_profile: bash_profile
+    # ~/.bashrc: bashrc
+    # ~/.config/fish: fish
+    # ~/.config/gcloud: gcloud
+    # ~/.config/omf: omf
+    # ~/.config/sway: sway
+    # ~/.config/waybar: waybar
+    # ~/.config/wofi: wofi
+    # ~/.profile: profile
+    # ~/.ssh/config:
+    #    path: ssh/config
+    #    create: true
+    # ~/.zlogin: zlogin
+    # ~/.zlogout: zlogout
+    # ~/.zprezto: prezto
+    # ~/.zpreztorc: zpreztorc
+    # ~/.zprofile: zprofile
+    # ~/.zshenv: zshenv
+    # ~/.zshrc: zshrc

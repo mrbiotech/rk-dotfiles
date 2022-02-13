@@ -1,0 +1,11 @@
+# Don't print a new line at the start of the prompt
+add_newline = true
+
+# Replace the ">" symbol in the prompt with "->"
+[character]
+success_symbol = "[➜](bold green) "
+
+[gcloud]
+format = "[$symbol$project.$active]($style) "
+style = "bold blue"
+disabled = true

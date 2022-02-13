@@ -1,0 +1,338 @@
+; vim:ft=cfg
+
+;; ____ ____ _    ____ ____ 
+;; |    |  | |    |  | |__/ 
+;; |___ |__| |___ |__| |  \ 
+
+[color]
+
+;; Infraspectral
+#330022
+#420029
+#51002E
+#600032
+#6F0034
+#7E0035
+#8D0034
+#9C0032
+#AB002E
+#BA0029
+#C90022
+#D8001A
+#E70010
+
+;; Lauper
+#220022
+#31002F
+#40003A
+#4F0044
+#5E004C
+#6D0053
+#7C0058
+#8B005C
+#9A005E
+#A9005F
+#B8005E
+#C7005C
+#D60058
+
+;; DarkLilac
+
+#221133
+#2C153E
+#371949
+#421D54
+#4E215F
+#5B256A
+#692975
+#772D80
+#86318B
+#963596
+#A1399C
+#AC3DA1
+#B741A6
+
+
+;; DesertNight
+#221111
+#301918
+#3E221F
+#4C2C26
+#5A372D
+#684334
+#76503B
+#845E42
+#926D49
+#A07C50
+#AC8C59
+#B39B67
+#BAA975
+
+;; Moss
+
+#112211
+#162C17
+#1B361E
+#204025
+#254A2D
+#2A5435
+#2F5E3E
+#346847
+#397251
+#3E7C5B
+#438666
+#489071
+#4D9A7D
+
+
+;; Neptune
+
+#111122
+#17162C
+#1E1B36
+#252040
+#2D254A
+#352A54
+#3E2F5E
+#473468
+#513972
+#5B3E7C
+#664386
+#714890
+#7D4D9A
+
+
+;; Forbidden magenta
+'#FF00FF'
+'#FF0FF3'
+'#FF1EE9'
+'#FF2DE0'
+'#FF3CD9'
+'#FF4BD3'
+'#FF5ACF'
+'#FF69CC'
+'#FF78CA'
+'#FF87CA'
+'#FF96CC'
+
+;; greenest green:
+#00FF00
+#0FFF1B
+#1EFF35
+#2DFF4D
+#3CFF64
+#4BFF79
+#5AFF8D
+#69FF9F
+#78FFB0
+#87FFBF
+#96FFCC
+
+;; elementary-2.jpg:
+#984236
+#4B1912
+#6F2A20
+#CD5C47
+#EFAB9C
+#EA7F63
+#FDEBDB
+#744854
+#A36A79
+#C38493
+#421F24
+#5C2F34
+
+;; elementary.jpg:
+#6D5B4A
+#9B927E
+#2A2515
+#13211E
+#C6EAE8
+#B9E3E6
+#A2CFD3
+#025C6F
+#0E3A43
+#89AFB6
+#1C798E
+#3D99AD
+
+;; gnome.jpg:
+#012E2C
+#326463
+#104F4F
+#033639
+#114F55
+#215B62
+
+;; deepin.jpg:
+#2B2719
+#78A91D
+#598423
+#3B6B2E
+#4FA346
+#225231
+#11402E
+#174C60
+#0F3546
+#385B75
+#7C96AE
+#371633
+
+;; budgie.jpg:
+#244FAC
+#1B3377
+#151D4D
+#4C1D49
+#863F76
+#6C255A
+
+;; bg_2.jpg:
+#F9F9F9
+#F6F8F7
+#2D59A9
+#8DA0E1
+#5C74C5
+#CED3F5
+#B6B2EE
+#E9A4D6
+#F1D6E9
+#E282C4
+#B6358B
+#D54EA5
+
+artcast1 = #C5AD94
+artcast2 = #E9DBC4
+artcast3 = #D7C89C
+artcast4 = #335E8B
+artcast5 = #25366F
+artcast6 = #0B143B
+artcast7 = #2D0B2E
+artcast8 = #F0D5E9
+artcast9 = #A96294
+artcast10 = #6D2353
+artcast11 = #C388AD
+artcast12 = #90406B
+
+skyseed1 = #E8D6BD
+skyseed2 = #B4A178
+skyseed3 = #201904
+skyseed4 = #776738
+skyseed5 = #9D9140
+skyseed6 = #57510D
+skyseed7 = #4B8FD1
+skyseed8 = #2469B5
+skyseed9 = #3F84CB
+skyseed10 = #053E8E
+skyseed11 = #0F2955
+skyseed12 = #160F13
+
+34861a = #F6F6F6
+34861b = #6D6A66
+34861c = #C98C2E
+34861d = #DCAA58
+34861e = #FDC538
+34861f = #666866
+34861g = #A2A5A3
+34861h = #F0F2F1
+34861i = #F0F1F3
+34861j = #A1A2A4
+34861k = #F2F0F2
+34861l = #A8A6A7
+
+1680x1050a = #000000
+1680x1050c = #010302
+1680x1050d = #8D97B6
+1680x1050e = #090B1A
+1680x1050f = #756FA6
+1680x1050g = #595087
+1680x1050h = #3A2768
+1680x1050i = #13041B
+1680x1050j = #62216A
+1680x1050k = #834182
+1680x1050l = #BC8CB5
+
+1080a = #CB6641
+1080b = #8B623A
+1080c = #4C2D11
+1080d = #C89E73
+1080e = #EDBE8A
+1080f = #634112
+1080g = #FBE6C5
+1080h = #908267
+1080i = #303E28
+1080j = #8C9A85
+1080k = #798674
+1080l = #5A6B59
+
+polygrad1 = #F1B292
+polygrad2 = #C7A388
+polygrad3 = #F4CB9C
+polygrad4 = #D6CC92
+polygrad5 = #A1CFB3
+polygrad6 = #82B39D
+polygrad7 = #5D9891
+polygrad8 = #5E9095
+polygrad9 = #4F727E
+polygrad10 = #75808B
+polygrad11 = #86929F
+polygrad12 = #A0979A
+
+
+desert1 = #967670
+desert2 = #D3B8AF
+desert3 = #8A6B60
+desert4 = #C7A690
+desert5 = #DDBD9E
+desert6 = #ECD6BB
+desert7 = #BDC5CC
+desert8 = #ADBBC9
+desert9 = #524762
+desert10 = #423653
+desert11 = #483652
+desert12 = #695566
+
+;; Active Shade 
+shade0 = #222222
+shade1 = #263238
+shade2 = #37474F
+shade3 = #455A64
+shade4 = #546E7A
+shade5 = #607D8B
+shade6 = #78909C
+shade7 = #90A4AE
+shade8 = #B0BEC5
+
+;; Active Colors
+bground      = #1D1F28
+fground      = #f7f7f7
+borderbg     = #f7f7f7
+accent       = #546E7A
+modulefg     = #dedede
+modulefg-alt = #f7f7f7
+
+;; Other
+trans       = #00000000
+white       = #FFFFFF
+black       = #000000
+
+;; Material Colors
+red         = #e53935
+pink        = #d81b60
+purple      = #8e24aa
+deep-purple = #5e35b1
+indigo      = #3949ab
+blue        = #1e88e5
+light-blue  = #039be5
+cyan        = #00acc1
+teal        = #00897b
+green       = #43a047
+light-green = #7cb342
+lime        = #c0ca33
+yellow      = #fdd835
+amber       = #ffb300
+orange      = #fb8c00
+deep-orange = #f4511e
+brown       = #6d4c41
+grey        = #757575
+blue-gray   = #546e7a
+

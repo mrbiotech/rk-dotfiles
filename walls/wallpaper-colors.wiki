@@ -1,0 +1,420 @@
+; vim:ft=cfg
+= Color palettes generated with the following command =
+- https://www.commandlinefu.com/commands/view/20911/image-to-color-palette-generator
+{{{bash
+extract-palette() { convert "$1" -resize 300x -dither None -colors "$2" txt: | tail -n +2 | tr -s ' ' | cut -d ' ' -f 3 | sort | uniq -c | sort -rn | tr -s ' ' | cut -d ' ' -f 3;}
+}}}
+
+
+;; ____ ____ _    ____ ____ 
+;; |    |  | |    |  | |__/ 
+;; |___ |__| |___ |__| |  \ 
+
+[color]
+
+== [[./bg-secondary.jpg]] ==
+
+== rk-lowpoly1.png ==
+#452139
+#4D5F57
+#5E2E40
+#825E4C
+#8D4156
+#A3BEAE
+#AF6B5F
+#BA8993
+#BB606C
+#C99181
+#DEC395
+#E8CDB0
+
+== rk-lowpoly2.png ==
+#4F959D
+#5E748F
+#7A7996
+#7A8E99
+#7B5F84
+#8AADA1
+#AAD2AC
+#C75661
+#CE9E5E
+#D05E58
+#D6CA89
+#EAD4A4
+
+== rk-lowpoly3.png ==
+#5A766D
+#6B8E7C
+#838476
+#87786C
+#8CA68B
+#9C4D59
+#A0736E
+#A4676A
+#AF9481
+#C9C7A0
+#E6CEA5
+#F0AF97
+
+== rk-lowpoly4.png ==
+#122B3C
+#206C8B
+#4599A7
+#4B6A5E
+#6F8F78
+#727657
+#787B8A
+#7BB3BC
+#80A18B
+#B5B699
+#D2D48A
+#E8E2C5
+
+== rk-lowpoly5.png ==
+#C9CC9F
+#AFB795
+#B1CA9B
+#8BAC93
+#619287
+#59827F
+#6D8788
+#5D6873
+#49354C
+#473342
+#715565
+#898184
+
+== gradient6.png: ==
+#D26765
+#F68E68
+#FFF373
+#FFFF81
+#2B005B
+#5D0060
+#8F0C63
+#AD3064
+#CD5165
+#EF6568
+
+== gradient10.png: ==
+#937774
+#FCA79A
+#CC9984
+#F0BB89
+#FEF9CA
+#2F0174
+#421373
+#591D7C
+#854880
+#B1638A
+#D37A90
+#FE95A1
+
+== gradient11.png: ==
+#FEFDD0
+#CCD98F
+#AEB88B
+#A5D785
+#7FB37E
+#599676
+#498074
+#356172
+#154969
+#18406C
+#0A3169
+
+== gradient14.png: ==
+#F7A89D
+#CF9B90
+#FEF8D8
+#14025A
+#44226C
+#53366F
+#360E55
+#522B6F
+#744E79
+#A06C86
+#C2828F
+#F6989D
+
+== elementary-2.jpg: ==
+#984236
+#4B1912
+#6F2A20
+#CD5C47
+#EFAB9C
+#EA7F63
+#FDEBDB
+#744854
+#A36A79
+#C38493
+#421F24
+#5C2F34
+
+== elementary.jpg: ==
+#6D5B4A
+#9B927E
+#2A2515
+#13211E
+#C6EAE8
+#B9E3E6
+#A2CFD3
+#025C6F
+#0E3A43
+#89AFB6
+#1C798E
+#3D99AD
+
+== gnome.jpg: ==
+#012E2C
+#033639
+#104F4F
+#114F55
+#215B62
+#326463
+
+== deepin.jpg: ==
+#0F3546
+#11402E
+#174C60
+#225231
+#2B2719
+#371633
+#385B75
+#3B6B2E
+#4FA346
+#598423
+#78A91D
+#7C96AE
+
+== budgie.jpg: ==
+#244FAC
+#1B3377
+#151D4D
+#4C1D49
+#863F76
+#6C255A
+
+== [[./bg_2.jpg]] ==
+#F9F9F9
+#F6F8F7
+#2D59A9
+#8DA0E1
+#5C74C5
+#CED3F5
+#B6B2EE
+#E9A4D6
+#F1D6E9
+#E282C4
+#B6358B
+#D54EA5
+
+== [[./ARTcast.jpg]] ==
+#0B143B
+#25366F
+#2D0B2E
+#335E8B
+#6D2353
+#90406B
+#A96294
+#C388AD
+#C5AD94
+#D7C89C
+#E9DBC4
+#F0D5E9
+
+== SkySeed ==
+#053E8E
+#0F2955
+#160F13
+#201904
+#2469B5
+#3F84CB
+#4B8FD1
+#57510D
+#776738
+#9D9140
+#B4A178
+#E8D6BD
+
+== [[./34861.jpeg]] ==
+#666866
+#6D6A66
+#A1A2A4
+#A2A5A3
+#A8A6A7
+#C98C2E
+#DCAA58
+#F0F1F3
+#F0F2F1
+#F2F0F2
+#F6F6F6
+#FDC538
+
+== [[./1680x1050.jpg]] ==
+#000000
+#010302
+#090B1A
+#13041B
+#3A2768
+#595087
+#62216A
+#756FA6
+#834182
+#8D97B6
+#BC8CB5
+
+== [[./1080p.png]] ==
+#303E28
+#4C2D11
+#5A6B59
+#634112
+#798674
+#8B623A
+#8C9A85
+#908267
+#C89E73
+#CB6641
+#EDBE8A
+#FBE6C5
+
+== PolyGradient ==
+#F1B292
+#C7A388
+#F4CB9C
+#D6CC92
+#A1CFB3
+#82B39D
+#5D9891
+#5E9095
+#4F727E
+#75808B
+#86929F
+#A0979A
+
+== Desert ==
+#423653
+#483652
+#524762
+#695566
+#8A6B60
+#967670
+#ADBBC9
+#BDC5CC
+#C7A690
+#D3B8AF
+#DDBD9E
+#ECD6BB
+
+
+== Polybar colors ==
+;; Active Shade 
+shade0 = #222222
+shade1 = #263238
+shade2 = #37474F
+shade3 = #455A64
+shade4 = #546E7A
+shade5 = #607D8B
+shade6 = #78909C
+shade7 = #90A4AE
+shade8 = #B0BEC5
+
+;; Active Colors
+bground      = #1D1F28
+fground      = #f7f7f7
+borderbg     = #f7f7f7
+accent       = #546E7A
+modulefg     = #dedede
+modulefg-alt = #f7f7f7
+
+;; Other
+trans       = #00000000
+white       = #FFFFFF
+black       = #000000
+
+;; Material Colors
+red         = #e53935
+pink        = #d81b60
+purple      = #8e24aa
+deep-purple = #5e35b1
+indigo      = #3949ab
+blue        = #1e88e5
+light-blue  = #039be5
+cyan        = #00acc1
+teal        = #00897b
+green       = #43a047
+light-green = #7cb342
+lime        = #c0ca33
+yellow      = #fdd835
+amber       = #ffb300
+orange      = #fb8c00
+deep-orange = #f4511e
+brown       = #6d4c41
+grey        = #757575
+blue-gray   = #546e7a
+
+bar_bg      = ${color.trans}
+bar_fg      = ${color.shade7}
+
+border_col  = ${color.shade0}
+
+modules_bg  = ${color.brown}
+modules_fg  = ${color.fground}
+
+mod_bg      = ${color.shade7}
+
+modules_prefix_bg = ${color.shade7}
+modules_prefix_fg = ${color.shade0}
+
+urgent_bg   = ${color.shade1}
+focused_bg  = ${color.shade10}
+
+essid_p_bg  = ${color.shade6}
+down_p_bg   = #5e606c
+cpu_p_bg    = ${color.shade5}
+ram_p_bg    = ${color.shade11}
+vol_p_bg    = #637b81
+bright_p_bg = #c29f6f
+battery_p_bg= ${color.shade9}
+time_p_bg   = ${color.shade10}
+
+
+== [[./bg-secondary.jpg]] ==
+=== 12-color palette ===
+#0A1E1D
+#0B201E
+#152626
+#19221F
+#293434
+#374344
+#4E3B2D
+#4E5453
+#62605B
+#6E6F6A
+#8F8E87
+#93735A
+
+=== 16-color palette ===
+#091E1D
+#0A201E
+#0D2221
+#121E1E
+#16211E
+#172626
+#19221F
+#1E3031
+#283838
+#2A2E2C
+#374344
+#4E3B2D
+#4E5453
+#6B6C67
+#8F8E87
+#93735A
+
+=== 5-color palette ===
+#0C1F1E
+#152626
+#293434
+#4C504E
+#918171
