@@ -31,57 +31,57 @@
     ~/.alacritty.yml: alacritty.yml
     ~/.aliases.sh: aliases.sh
     ~/.config/alacritty/alacritty.yml: alacritty.yml
-    ~/.config/dunst/dunstrc:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: dunstrc
-    ~/.config/i3:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: i3
-    ~/.config/i3status:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: i3status
-    ~/.config/openbox:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: openbox
-    ~/.config/picom.conf:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: picom.conf.MINE
-    ~/.config/polybar:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: polybar
+    ~/.config/dunst/dunstrc: dunstrc
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: dunstrc
+    ~/.config/i3: i3
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: i3
+    ~/.config/i3status: i3status
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: i3status
+    ~/.config/openbox: openbox
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: openbox
+    ~/.config/picom.conf: picom.conf.MINE
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: picom.conf.MINE
+    ~/.config/polybar: polybar
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: polybar
     ~/.config/ranger: ranger
     ~/.config/sakura: sakura
     ~/.config/starship.toml: starship.toml
-    ~/.config/tint2:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: tint2
-    ~/.config/yabar:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path:  yabar
+    ~/.config/tint2: tint2
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: tint2
+    ~/.config/yabar: yabar
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path:  yabar
     ~/.gitconfig: gitconfig
     ~/.irssi: irssi
     ~/.npmrc: npmrc
     ~/.ptpython/config.py: ptpython-config.py
     ~/maintenance.sh:
-       if: '[ uname = Darwin ]'
-       path: maintenance.sh
-    ~/.Xmodmap:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: Xmodmap
+    #  if: '[ uname = Darwin ]'
+    #  path: maintenance.sh
+    ~/.Xmodmap: Xmodmap
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: Xmodmap
     ~/.screenrc: screenrc
     ~/.spacemacs: spacemacs
-    ~/.stalonetrayrc:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: stalonetrayrc
+    ~/.stalonetrayrc: stalonetrayrc
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: stalonetrayrc
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
-    ~/.config/yetanotherbar/config.ron:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: yetanotherbar.ron
-    ~/.config/yetanotherbar/style.css:
-       if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-       path: yetanotherbar.style.css
+    ~/.config/yetanotherbar/config.ron: yetanotherbar.ron
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: yetanotherbar.ron
+    ~/.config/yetanotherbar/style.css: yetanotherbar.style.css
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: yetanotherbar.style.css
     ~/.zlogin: zlogin
     ~/.zlogout: zlogout
     ~/.zprezto: prezto
