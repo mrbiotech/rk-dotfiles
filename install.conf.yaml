@@ -18,7 +18,7 @@
     - [git submodule init, Initializing submodules]
     - [git submodule update --remote --recursive, Updating submodules...]
     - [git submodule sync --recursive, Syncing submodules...]
-    - [git clone https://github.com/syl20bnr/spacemacs.git ~/.emacs.d, Snatching latest spacemacs]
+    - [git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d, Snatching latest spacemacs]
       # - [cd ~/dotfiles/prezto && git submodule init && git submodule update --remote, Initializing ZPrezto...]
       #- [sudo cp ~/dotfiles/bash_profile /root/.bash_profile, Installing root .bash_profile]
       #- [sudo cp ~/dotfiles/bashrc /root/.bashrc, Installing root .bashrc]
@@ -82,6 +82,13 @@
     ~/.config/yetanotherbar/style.css:
        if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
        path: yetanotherbar.style.css
+    ~/.zlogin: zlogin
+    ~/.zlogout: zlogout
+    ~/.zprezto: prezto
+    ~/.zpreztorc: zpreztorc
+    ~/.zprofile: zprofile
+    ~/.zshenv: zshenv
+    ~/.zshrc: zshrc
     # ~/.bash_profile: bash_profile
     # ~/.bashrc: bashrc
     # ~/.config/fish: fish
@@ -94,10 +101,3 @@
     # ~/.ssh/config:
     #    path: ssh/config
     #    create: true
-    # ~/.zlogin: zlogin
-    # ~/.zlogout: zlogout
-    # ~/.zprezto: prezto
-    # ~/.zpreztorc: zpreztorc
-    # ~/.zprofile: zprofile
-    # ~/.zshenv: zshenv
-    # ~/.zshrc: zshrc
