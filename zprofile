@@ -71,3 +71,8 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 
+export PASTEL_COLOR_MODE=24bit
+
+if [[ -h "$HOME/.aliases.sh" ]]; then
+    source "$HOME/.aliases.sh"
+fi
