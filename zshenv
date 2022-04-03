@@ -17,3 +17,5 @@ export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 
 export PASTEL_COLOR_MODE=24bit
+
+source ~/.aliases.sh

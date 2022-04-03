@@ -40,4 +40,5 @@ dls () {
   echo `ls -l | grep "^d" | awk '{ print $9 }' | tr -d "/"`
 }
 
+source "$HOME/.aliases.sh"
 eval "$(starship init zsh)"

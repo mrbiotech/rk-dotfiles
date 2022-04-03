@@ -71,3 +71,6 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
 source ~/.local/bin/virtualenvwrapper.sh
 
+if [[ -f "$HOME/.aliases.sh" ]]; then
+    source "$HOME/.aliases.sh"
+fi

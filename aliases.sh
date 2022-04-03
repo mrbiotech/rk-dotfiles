@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if test -f "exa"; then
+if test -x `which exa`; then
     alias l="exa -ahlFG"
 else
     alias l="ls -ahlFG"
