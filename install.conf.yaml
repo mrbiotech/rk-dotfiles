@@ -58,10 +58,18 @@
     ~/.config/yabar: yabar
     #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
     #  path:  yabar
+    ~/.config/yetanotherbar/config.ron: yetanotherbar.ron
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: yetanotherbar.ron
+    ~/.config/yetanotherbar/style.css: yetanotherbar.style.css
+    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
+    #  path: yetanotherbar.style.css
     ~/.gitconfig: gitconfig
     ~/.irssi: irssi
     ~/.npmrc: npmrc
     ~/.ptpython/config.py: ptpython-config.py
+    ~/.fluxbox: fluxbox
+    ~/.pekwm: pekwm
     ~/maintenance.sh:
     #  if: '[ uname = Darwin ]'
     #  path: maintenance.sh
@@ -76,12 +84,6 @@
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
-    ~/.config/yetanotherbar/config.ron: yetanotherbar.ron
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: yetanotherbar.ron
-    ~/.config/yetanotherbar/style.css: yetanotherbar.style.css
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: yetanotherbar.style.css
     ~/.zlogin: zlogin
     ~/.zlogout: zlogout
     ~/.zprezto: prezto
