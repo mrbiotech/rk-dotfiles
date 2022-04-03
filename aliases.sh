@@ -1,10 +1,8 @@
 #!/bin/sh
 
-if test -x `which exa`; then
-    alias l="exa -ahlFG"
-else
-    alias l="ls -ahlFG"
-fi
+[[ -x `which exa` ]] && alias l='exa -ahlFG'
+[[ -x !(`which exa`) ]] && alias l='ls -ahlFG'
+
 alias randompassword="date +%s | gsha256sum | base64 | head -c 12 ; echo"
 alias servethis="python -m http.server 5150"
 alias printcsv='cat $1 | sed -e "s/,,/, ,/g" | column -s, -t | less -#5 -N -S'
