@@ -10,12 +10,17 @@ set splitright
 set encoding=utf-8
 let g:vimwiki_use_mouse=1
 let vimwiki_automatic_nested_syntaxes=1
+let g:vimwiki_folding='list'
+let vwiki_1={}
+let vwiki_1.path='~/Dropbox/Info/vimwiki'
+let vwiki_1.path_html=vwiki_1.path . '/html'
+let vwiki_1.template_path=vwiki_1.path_html . '/templates'
+let g:vimwiki_list=[vwiki_1]
 
 let g:airline_theme='badwolf'
 let g:airline_powerline_fonts=1
 colorscheme badwolf
 
-let g:vimwiki_folding='expr'
 let g:airline_theme='dark'
 let g:airline_left_sep="\uE0B4"
 let g:airline_right_sep="\uE0B6"
@@ -61,11 +66,10 @@ let g:vimwiki_hl_headers=1
 let g:vimwiki_ht_cb_checked=1
 
 function! AppendModeline()
-	let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
-				\ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
-	let l:modeline = substitute(&commentstring, "%s", l:modeline,
-	"")
-	call append(line("$"), l:modeline)
+    let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+    let l:modeline = substitute(&commentstring, "%s", l:modeline,"")
+    call append(line("$"), l:modeline)
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 

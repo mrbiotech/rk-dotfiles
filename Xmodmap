@@ -1,2 +1,4 @@
 clear Lock
 keycode 0x42 = Escape
+remove Mod2 = Meta_L
+add Mod1 = Meta_L
