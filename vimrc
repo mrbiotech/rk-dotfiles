@@ -4,6 +4,7 @@ syntax on
 filetype plugin indent on
 set backspace=indent,eol,start
 set background=dark
+set termguicolors
 let g:autopep8_diff_type='vertical'
 set splitbelow
 set splitright
@@ -17,9 +18,9 @@ let vwiki_1.path_html=vwiki_1.path . '/html'
 let vwiki_1.template_path=vwiki_1.path_html . '/templates'
 let g:vimwiki_list=[vwiki_1]
 
-let g:airline_theme='badwolf'
+let g:airline_theme='deus'
 let g:airline_powerline_fonts=1
-colorscheme badwolf
+colorscheme monokai-chris
 
 let g:airline_theme='dark'
 let g:airline_left_sep="\uE0B4"

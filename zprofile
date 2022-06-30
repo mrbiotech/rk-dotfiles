@@ -45,6 +45,7 @@ typeset -gU cdpath fpath mailpath path
 path=(
   /usr/local/{bin,sbin}
   $HOME/.local/{bin,sbin}
+  $HOME/.emacs.d/bin
   $path
 )
 

@@ -66,3 +66,12 @@
 	path = prezto
 	url = https://github.com/sorin-ionescu/prezto.git
 	ignore = dirty
+[submodule "vim/bundle/clrzr"]
+	path = vim/bundle/clrzr
+	url = https://github.com/BourgeoisBear/clrzr.git
+[submodule "dwm/dwm-flexipatch"]
+	path = dwm/dwm-flexipatch
+	url = https://github.com/bakkeby/dwm-flexipatch.git
+[submodule "dwm/flexipatch-finalizer"]
+	path = dwm/flexipatch-finalizer
+	url = https://github.com/bakkeby/flexipatch-finalizer.git

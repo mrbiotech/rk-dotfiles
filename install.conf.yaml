@@ -40,6 +40,7 @@
     ~/.config/i3status: i3status
     #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
     #  path: i3status
+    ~/.config/kitty: kitty.conf
     ~/.config/openbox: openbox
     #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
     #  path: openbox
@@ -66,6 +67,7 @@
     #  path: yetanotherbar.style.css
     ~/.gitconfig: gitconfig
     ~/.irssi: irssi
+    ~/.local/share/dwm: autostart.sh
     ~/.npmrc: npmrc
     ~/.ptpython/config.py: ptpython-config.py
     ~/.fluxbox: fluxbox

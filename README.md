@@ -7,10 +7,54 @@ This repo requires only dotbot to function and [instructions for its installatio
 ## Installing my dotfiles from GitHub
 
 ```bash
-git clone https://github.com/mrbiotech/dotfiles.git
-cd dotfiles
+git clone https://github.com/mrbiotech/rk-dotfiles.git
+cd rk-dotfiles
 ./install
 ```
+
+## Configurations
+
+These dotfiles contain configurations for the following programs, which may need to be installed on the base system.
+
+### Desktop environments
+* dwm
+	* slstatus
+	* dwm-flexipatcch
+	* yetanotherbar
+	* Picom
+* fluxbox
+* pekwm
+* i3/polybar
+	* dunst
+	* rofi
+	* Picom
+* Openbox
+	* Tint2
+
+### Terminal emulators
+* Alacritty
+* Kitty
+* Ranger
+* Sakura
+* screen
+* tmux
+* ZSH/Prezto
+
+### Development
+* Aliases
+* PTPython
+* Doom Emacs
+* Vim
+
+### Common scripts
+* Terminal color checks
+* System provisioning
+
+### Mac
+* Slate.app
+* Maintenance script
+
+
 
 ## dotbot `install.conf.yaml` configuration
 
@@ -80,12 +124,19 @@ Generally overrides settings for any commands/options that have defaults of thei
         relink: true
 ```
 
-
-
-
+## TODO
+1. Make better folder structure - it's a mess right now:
+	1. Scripts
+	2. Configs folder:
+		1. Folders for each configurable program
+2. Create software bootstrapping files for the following OS's:
+	1. Arch/Garuda/Manjaro Linux
+	2. VoidLinux
+	3. Ubuntu
+	4. Ubuntu running on WSL2 in Windows
 
 ## History
-
+**[2022-06-26]** Replacing SpacEMACS with Doom Emacs - it's just faster. Adding config files for dwm, slstatus and dwm-flexipatch.
 **[2018-10-05]** Initial set of GitHub repo, dotbot and bash, vim, tmux, zprezto, gcloud, ranger and slate dotfiles.
 
 #### [`init_dotfiles.sh` initialization script to set up dotbot](https://github.com/Vaelatern/init-dotfiles)

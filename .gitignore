@@ -3,4 +3,4 @@ ranger/old-commands.py
 ranger/colorschemes/__pycache__
 tint2/*.backup.*
 vim/.netrwhist
-
+nohup.out
