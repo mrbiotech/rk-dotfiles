@@ -94,6 +94,11 @@
     ~/.zprofile: zprofile
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
+    ~/rk-dotfiles/dwm/dwm-flexipatch/config.h: dwm/flexipatch-config.h
+    ~/rk-dotfiles/dwm/dwm-flexipatch/config.mk: dwm/flexipatch-config.mk
+    ~/rk-dotfiles/dwm/dwm-flexipatch/patches.h: dwm/flexipatch-patches.h
+    ~/rk-dotfiles/dwm/slstatus/config.h: dwm/slstatus-config.h
+    ~/rk-dotfiles/dwm/slstatus/config.mk: dwm/slstatus-config.mk
     # ~/.bash_profile: bash_profile
     # ~/.bashrc: bashrc
     # ~/.config/fish: fish
