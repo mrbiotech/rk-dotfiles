@@ -18,13 +18,12 @@
     - [git submodule init, Initializing submodules]
     - [git submodule update --remote --recursive, Updating submodules...]
     - [git submodule sync --recursive, Syncing submodules...]
-    - [git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d, Snatching latest spacemacs]
-      # - [cd ~/dotfiles/prezto && git submodule init && git submodule update --remote, Initializing ZPrezto...]
-      #- [sudo cp ~/dotfiles/bash_profile /root/.bash_profile, Installing root .bash_profile]
-      #- [sudo cp ~/dotfiles/bashrc /root/.bashrc, Installing root .bashrc]
-      #- [sudo cp ~/dotfiles/profile /root/.profile, Installing root .profile]
-      #- [sudo cp -fr ~/dotfiles/vim /root/.vim, Installing root .vim/]
-      #- [sudo cp ~/dotfiles/root_vimrc /root/.vimrc, Installing root .vimrc]
+      # - [cd ~/rk-dotfiles/prezto && git submodule init && git submodule update --remote, Initializing ZPrezto...]
+      #- [sudo cp ~/rk-dotfiles/bash_profile /root/.bash_profile, Installing root .bash_profile]
+      #- [sudo cp ~/rk-dotfiles/bashrc /root/.bashrc, Installing root .bashrc]
+      #- [sudo cp ~/rk-dotfiles/profile /root/.profile, Installing root .profile]
+      #- [sudo cp -fr ~/rk-dotfiles/vim /root/.vim, Installing root .vim/]
+      #- [sudo cp ~/rk-dotfiles/root_vimrc /root/.vimrc, Installing root .vimrc]
 
 # Symlink my dotfiles
 - link:
@@ -40,7 +39,7 @@
     ~/.config/i3status: i3status
     #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
     #  path: i3status
-    ~/.config/kitty: kitty.conf
+    ~/.config/kitty/kitty.conf: kitty.conf
     ~/.config/openbox: openbox
     #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
     #  path: openbox
@@ -67,7 +66,7 @@
     #  path: yetanotherbar.style.css
     ~/.gitconfig: gitconfig
     ~/.irssi: irssi
-    ~/.local/share/dwm: autostart.sh
+    ~/.local/share/dwm/autostart.sh: autostart.sh
     ~/.npmrc: npmrc
     ~/.ptpython/config.py: ptpython-config.py
     ~/.fluxbox: fluxbox

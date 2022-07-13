@@ -4,3 +4,7 @@ ranger/colorschemes/__pycache__
 tint2/*.backup.*
 vim/.netrwhist
 nohup.out
+dwm/slstatus
+dwm/dwm-flexipatch
+dwm/dwm
+dwm/flexipatch-finalizer
