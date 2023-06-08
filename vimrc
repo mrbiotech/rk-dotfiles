@@ -11,18 +11,17 @@ set splitright
 set encoding=utf-8
 let g:vimwiki_use_mouse=1
 let vimwiki_automatic_nested_syntaxes=1
-let g:vimwiki_folding='list'
+let g:vimwiki_folding='expr'
 let vwiki_1={}
-let vwiki_1.path='~/Dropbox/Info/vimwiki'
+let vwiki_1.path='/mnt/c/Users/richk/Dropbox/Info/vimwiki'
 let vwiki_1.path_html=vwiki_1.path . '/html'
 let vwiki_1.template_path=vwiki_1.path_html . '/templates'
 let g:vimwiki_list=[vwiki_1]
 
-let g:airline_theme='deus'
-let g:airline_powerline_fonts=1
 colorscheme monokai-chris
 
-let g:airline_theme='dark'
+let g:airline_theme='deus'
+let g:airline_powerline_fonts=1
 let g:airline_left_sep="\uE0B4"
 let g:airline_right_sep="\uE0B6"
 let g:airline#extensions#tabline#enabled=1
@@ -36,6 +35,9 @@ map ,j :tabl<cr>
 map ,h :tabp<cr>
 map ,l :tabn<cr>
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
 scriptencoding utf-8
@@ -74,3 +76,4 @@ function! AppendModeline()
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
+au BufRead,BufNewFile *.noml set filetype=noml
