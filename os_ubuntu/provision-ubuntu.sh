@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # CLI Software I like
-sudo apt install -y zsh fish vim lynx emacs rclone nmap 
+sudo apt install -y zsh fish vim lynx emacs nmap 
 
 # Graphical software I like
-sudo apt install -y rclone-browser fluxbox aseprite gimp inkscape sakura epiphany-browser cataclysm-dda-sdl yabar rofi dunst
+sudo apt install -y aseprite epiphany-browser yabar rofi dunst
 sudo apt install -y kitty
 
 # Requirements for i3-gaps
