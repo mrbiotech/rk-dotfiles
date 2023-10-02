@@ -58,10 +58,6 @@
 	path = vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
 	ignore = dirty
-[submodule "fluxbox/styles"]
-	path = fluxbox/styles
-	url = https://github.com/mrbiotech/rk-fluxbox-themes.git
-	ignore = dirty
 [submodule "prezto"]
 	path = prezto
 	url = https://github.com/sorin-ionescu/prezto.git

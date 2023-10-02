@@ -25,4 +25,3 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 export PASTEL_COLOR_MODE=24bit
 
 source ~/.aliases.sh
-. "$HOME/.cargo/env"
