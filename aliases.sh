@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[[ -x `which exa` ]] && alias l='exa -ahlFG'
+[[ -x `which eza` ]] && alias l='eza -ahlG'
 [[ -x !(`which exa`) ]] && alias l='ls -ahlFG'
 
 alias randompassword="date +%s | gsha256sum | base64 | head -c 12 ; echo"

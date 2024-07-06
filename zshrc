@@ -41,4 +41,10 @@ dls () {
 }
 
 source "$HOME/.aliases.sh"
-eval "$(starship init zsh)"
+
+if [[ -s "/usr/share/nvm/init-nvm.sh" ]]; then
+  source '/usr/share/nvm/init-nvm.sh'
+fi
+if [[ -s "${which starship}" ]]; then
+  eval "$(starship init zsh)"
+fi

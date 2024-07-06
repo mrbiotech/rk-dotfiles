@@ -1,0 +1,18 @@
+{
+	"Use256Color": true,
+	"Layout": "bottom-up",
+	"Prompt": "[peco]",
+	"InitialFilter": "IgnoreCase",
+	"Keymap": {
+		"Pgup": "peco.ScrollPageUp",
+		"Pgdn": "peco.ScrollPageDown",
+		"C-x,C-c": "peco.Cancel",
+		"Esc": "peco.Cancel"
+
+	},
+	"Style": {
+		"Query": ["3","on_8"],
+		"Matched": ["11","on_1"]
+	}
+
+}

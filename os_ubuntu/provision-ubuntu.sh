@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # CLI Software I like
-sudo apt install -y zsh fish vim lynx emacs rclone nmap 
+sudo apt install -y git zsh fish vim lynx emacs rclone nmap peco jq
 
 # Graphical software I like
 sudo apt install -y rclone-browser fluxbox aseprite gimp inkscape sakura epiphany-browser cataclysm-dda-sdl yabar rofi dunst
