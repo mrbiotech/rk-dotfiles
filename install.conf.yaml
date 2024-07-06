@@ -69,7 +69,7 @@
     ~/.irssi: irssi
     ~/.local/share/dwm/autostart.sh: autostart.sh
     ~/.npmrc: npmrc
-    ~/.ptpython/config.py: ptpython-config.py
+    ~/.config/ptpython/config.py: ptpython-config.py
     ~/.fluxbox: fluxbox
     ~/.pekwm: pekwm
     ~/maintenance.sh:
