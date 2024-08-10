@@ -136,6 +136,7 @@ Generally overrides settings for any commands/options that have defaults of thei
 	4. Ubuntu running on WSL2 in Windows
 
 ## History
+[2023-12-19]** Fluxbox menu generation scripts. General setup script to capture folders, Rust/Cargo, VirtualEnvs, Starship prompt.
 **[2022-06-26]** Replacing SpacEMACS with Doom Emacs - it's just faster. Adding config files for dwm, slstatus and dwm-flexipatch.
 **[2018-10-05]** Initial set of GitHub repo, dotbot and bash, vim, tmux, zprezto, gcloud, ranger and slate dotfiles.
 

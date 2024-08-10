@@ -6,6 +6,12 @@
 alias randompassword="date +%s | gsha256sum | base64 | head -c 12 ; echo"
 alias servethis="python -m http.server 5150"
 alias printcsv='cat $1 | sed -e "s/,,/, ,/g" | column -s, -t | less -#5 -N -S'
+alias whichdistro='lsb_release -d'
+
+# OS-specific aliases:
+[[ $(lsb_release -d | grep 'Void Linux') ]] && source ~/rk-dotfiles/os_void/aliases-void.sh
+[[ $(lsb_release -d | grep 'OS X' ) ]] && source ~/rk-dotfiles/os_macosx/aliases-mac.sh
+[[ $(lsb_release -d | grep 'Ubuntu' ) ]] && source ~/rk-dotfiles/os_ubuntu/aliases-mac.sh
 
 # Docker aliases
 alias dockersh='f() { docker exec -it $1 sh };f'

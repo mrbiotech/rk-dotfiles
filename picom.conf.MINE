@@ -2,32 +2,26 @@
 #             Corners           #
 #################################
 # requires: https://github.com/sdhand/compton
-corner-radius = 15.0;
+corner-radius = 5.0;
 rounded-corners-exclude = [
   #"window_type = 'normal'",
   "class_g = 'i3'",
   "class_g = 'i3bar'",
   "class_g = 'i3stats'",
-  "class_g = 'URxvt'",
-  "class_g = 'XTerm'",
-  "class_g = 'kitty'",
   "class_g = 'polybar'",
   "class_g = 'sublime'",
   "class_g = 'github-desktop'",
-  "class_g = 'code-oss'",
-  "class_g = 'firefox'",
-  "class_g = 'Thunderbird'"
+  "class_g = 'firefox'"
 ];
 round-borders = 1;
 round-borders-exclude = [
-  #"class_g = 'TelegramDesktop'",
   "class_g = 'polybar'",
   "class_g = 'sublime'",
   "class_g = 'github-desktop'",
   "class_g = 'i3'",
   "class_g = 'i3bar'",
   "class_g = 'i3stats'",
-  "class_g = 'yabar'",
+  "class_g = 'yabar'"
 ];
 
 # Specify a list of border width rules, in the format `PIXELS:PATTERN`, 
@@ -41,7 +35,8 @@ round-borders-rule = [
   "3:class_g      = 'XTerm'",
   "3:class_g      = 'URxvt'",
   "10:class_g     = 'alacritty'",
-  "15:class_g     = 'Signal'"
+  "10:class_g     = 'dwm'",
+  "7:class_g      = 'kitty'"
 ];
 
 #################################
@@ -174,11 +169,11 @@ fade-exclude = [
 
 # Opacity of inactive windows. (0.1 - 1.0, defaults to 1.0)
 # inactive-opacity = 1
-inactive-opacity = 0.8;
+inactive-opacity = 0.7;
 
 # Opacity of window titlebars and borders. (0.1 - 1.0, disabled by default)
 # frame-opacity = 1.0
-frame-opacity = 0.7;
+frame-opacity = 0.1;
 
 # Default opacity for dropdown menus and popup menus. (0.0 - 1.0, defaults to 1.0)
 # menu-opacity = 1.0
@@ -267,8 +262,8 @@ blur-background = false;
 
 blur: {
   # requires: https://github.com/ibhagwan/picom
-  method = "dual_kawase";
-  #method = "kernel";
+  # method = "dual_kawase";
+  method = "kernel";
   strength = 7;
   # deviation = 1.0;
   # kernel = "11x11gaussian";
@@ -306,14 +301,9 @@ daemon = true;
 # Specify the backend to use: `xrender`, `glx`, or `xr_glx_hybrid`.
 # `xrender` is the default one.
 #
-experimental-backends = true;
-backend = "glx";
-# backend = "xrender";
-
-
-# Enable/disable VSync.
-# vsync = false
-vsync = true;
+# experimental-backends = true;
+# backend = "glx";
+backend = "xrender";
 
 # Enable remote control via D-Bus. See the *D-BUS API* section below for more details.
 # dbus = false
@@ -344,7 +334,7 @@ detect-client-opacity = true;
 # try detecting this with X RandR extension.
 #
 # refresh-rate = 60
-refresh-rate = 0;
+# refresh-rate = 0;
 
 # Limit picom to repaint at most once every 1 / 'refresh_rate' second to 
 # boost performance. This should not be used with 

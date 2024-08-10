@@ -12,8 +12,8 @@
 ####### Moved into .zprofile
 
 ###### Terminate already running bar instances
-killall -q polybar
-killall -q picom
+pkill -9 polybar
+pkill -9 picom
 
 ###### Wait until the processes have been shut down
 if [ `pgrep -x polybar` ]; then
@@ -29,7 +29,7 @@ if [ `pgrep -x picom` ]; then
 fi
 
 ###### Launch the polybar theme
-#polybar -q -c ~/.config/polybar/config.ini main &
+# polybar -q -c ~/.config/polybar/config.ini main &
 polybar -q -c ~/.config/polybar/mrb-rounded.ini rk1 &
-. ~/dotfiles/polybar/picom.sh
+. ~/rk-dotfiles/polybar/picom.sh
 . ~/.fehbg

@@ -1,0 +1,90 @@
+[submenu] (Development)
+    [exec] (Code - OSS) {code-oss}
+    [exec] (Geany) {geany}
+    [exec] (Icon Browser) {gtk4-icon-browser}
+    [exec] (Python) {sakura -e python}
+    [exec] (Sublime Text) {/usr/lib/sublime_text/sublime_text}
+[end]
+[submenu] (Editors)
+    [exec] (Emacs) {sakura -e emacs}
+    [exec] (Mousepad) {mousepad}
+    [exec] (Vi) {sakura -e vi}
+    [exec] (Vim) {sakura -e vim}
+[end]
+[submenu] (Games)
+    [exec] (2048) {gnome-2048}
+    [exec] (Godot) {godot}
+[end]
+[submenu] (Graphics)
+    [exec] (Ristretto Image Viewer) {ristretto}
+[end]
+[submenu] (Multimedia)
+    [exec] (Parole Media Player) {parole}
+[end]
+[submenu] (Network)
+    [exec] (Chromium) {chromium}
+    [exec] (FireFox) {firefox}
+    [exec] (Lynx) {sakura -e lynx}
+    [exec] (Mail Reader) {exo-open --launch MailReader}
+    [exec] (Web Browser) {exo-open --launch WebBrowser}
+[end]
+[submenu] (Shells)
+    [exec] (Dash) {sakura -e dash -i}
+    [exec] (GIT) {sakura -e git}
+    [exec] (kitty) {kitty}
+    [exec] (Sakura) {sakura}
+    [exec] (Thunar File Manager) {thunar}
+    [exec] (Xfce Terminal) {xfce4-terminal}
+[end]
+[submenu] (System)
+    [submenu] (Settings)
+        [submenu] (GNOME)
+            [exec] (Advanced Network Configuration) {nm-connection-editor}
+        [end]
+        [submenu] (Xfce)
+            [exec] (Settings Manager) {xfce4-settings-manager}
+        [end]
+        [exec] (Accessibility) {xfce4-accessibility-settings}
+        [exec] (Appearance) {xfce4-appearance-settings}
+        [exec] (Color Profiles) {xfce4-color-settings}
+        [exec] (Default Applications) {xfce4-mime-settings}
+        [exec] (Desktop) {xfdesktop-settings}
+        [exec] (Display) {xfce4-display-settings}
+        [exec] (File Manager Settings) {thunar-settings}
+        [exec] (Keyboard) {xfce4-keyboard-settings}
+        [exec] (Mouse and Touchpad) {xfce4-mouse-settings}
+        [exec] (Notifications) {xfce4-notifyd-config}
+        [exec] (Openbox Configuration Manager) {obconf}
+        [exec] (Panel) {xfce4-panel --preferences}
+        [exec] (Power Manager) {xfce4-power-manager-settings}
+        [exec] (Removable Drives and Media) {thunar-volman-settings}
+        [exec] (Session and Startup) {xfce4-session-settings}
+        [exec] (Settings Editor) {xfce4-settings-editor}
+        [exec] (Text Editor Settings) {mousepad --preferences}
+        [exec] (Window Manager) {xfwm4-settings}
+        [exec] (Window Manager Tweaks) {xfwm4-tweaks-settings}
+        [exec] (Workspaces) {xfwm4-workspace-settings}
+        [exec] (Xfce Screensaver) {xfce4-screensaver-preferences}
+        [exec] (Xfce Terminal Settings) {xfce4-terminal --preferences}
+    [end]
+    [exec] (GKrellM) {gkrellm}
+    [exec] (GParted) {gparted-pkexec}
+    [exec] (Htop) {sakura -e htop}
+    [exec] (jgmenu) {jgmenu_run}
+    [exec] (Log Out) {xfce4-session-logout}
+    [exec] (Task Manager) {xfce4-taskmanager}
+    [exec] (Tint2) {tint2}
+    [exec] (Top) {sakura -e top}
+[end]
+[submenu] (Utilities)
+    [exec] (About Xfce) {xfce4-about}
+    [exec] (Application Finder) {xfce4-appfinder}
+    [exec] (Bc) {sakura -e bc}
+    [exec] (Dc) {sakura -e dc}
+    [exec] (File Manager) {exo-open --launch FileManager}
+    [exec] (Info) {sakura -e info}
+    [exec] (picom) {picom}
+    [exec] (Run Program...) {xfce4-appfinder --collapsed}
+    [exec] (Terminal Emulator) {exo-open --launch TerminalEmulator}
+    [exec] (Xev) {sakura -e xev}
+[end]
