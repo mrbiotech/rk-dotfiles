@@ -72,3 +72,6 @@
 [submodule "vim/bundle/vim-colorschemes"]
 	path = vim/bundle/vim-colorschemes
 	url = http://github.com/flazz/vim-colorschemes.git
+[submodule "vim/bundle/vim-nix"]
+	path = vim/bundle/vim-nix
+	url = https://github.com/LnL7/vim-nix.git
