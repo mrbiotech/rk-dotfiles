@@ -12,24 +12,6 @@ fi
 
 source ~/.env
 
-##### export WINHOME=/mnt/c/Users/richk
-##### export WINDLS=/mnt/d/SeagateHDD-Downloads
-##### export WINDOCS=/mnt/d/richk/Documents
-##### export ORG=/mnt/c/Users/richk/iCloudDrive/Info/org
-##### export WIKI=/mnt/c/Users/richk/iCloudDrive/Info/vimwiki
-
-# For Python virtualenvs:
-##### export WORKON_HOME=$HOME/.virtualenvs
-##### export PROJECT_HOME=$HOME/Projects
-##### export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-##### export VIRTUALENVWRAPPER_VIRTUALENV=/usr/sbin/virtualenv
-##### source /usr/sbin/virtualenvwrapper.sh
-
-# For Go Lang (here in WSL2):
-##### export GOROOT=/usr/local/go
-##### export GOPATH=$HOME/go
-##### export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-
 export PASTEL_COLOR_MODE=24bit
 
 source ~/.aliases.sh
