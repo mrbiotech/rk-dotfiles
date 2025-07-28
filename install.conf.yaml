@@ -16,15 +16,11 @@
 # Run shell commands
 - shell:
     - [git submodule init, Initializing submodules]
-    - [git submodule update --remote, Updating submodules...]
-    - read -q "REPLY?Install Rust (yN)? " && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    - read -q "REPLY?Install NVM (yN)? " && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40/install.sh | bash
-    - cd ~/rk-dotfiles/prezto && git submodule init && git submodule update --remote
-    #- [sudo cp ~/rk-dotfiles/bash_profile /root/.bash_profile, Installing root .bash_profile]
-    #- [sudo cp ~/rk-dotfiles/bashrc /root/.bashrc, Installing root .bashrc]
-    #- [sudo cp ~/rk-dotfiles/profile /root/.profile, Installing root .profile]
-    #- [sudo cp -fr ~/rk-dotfiles/vim /root/.vim, Installing root .vim/]
-    #- [sudo cp ~/rk-dotfiles/root_vimrc /root/.vimrc, Installing root .vimrc]
+    - [git submodule update --remote --recursive, Updating submodules...]
+    - [git submodule sync --recursive, Syncing submodules...]
+    - 
+      command: test -f ~/.env && { echo ".env already exists"; } || { cp template-env ~/.env; }
+      description: "REMEMBER TO UPDATE envars IN .env"
 
 # Symlink my dotfiles
 - link:
@@ -81,8 +77,6 @@
     #  path: Xmodmap
     ~/.screenrc: screenrc
     ~/.slate: slate
-    ~/.spacemacs: spacemacs
-    ~/.stalonetrayrc: stalonetrayrc
     #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
     #  path: stalonetrayrc
     ~/.tmux.conf: tmux.conf
@@ -95,20 +89,4 @@
     ~/.zprofile: zprofile
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
-    ~/rk-dotfiles/dwm/dwm-flexipatch/config.h: dwm/flexipatch-config.h
-    ~/rk-dotfiles/dwm/dwm-flexipatch/config.mk: dwm/flexipatch-config.mk
-    ~/rk-dotfiles/dwm/dwm-flexipatch/patches.h: dwm/flexipatch-patches.h
-    ~/rk-dotfiles/dwm/slstatus/config.h: dwm/slstatus-config.h
-    ~/rk-dotfiles/dwm/slstatus/config.mk: dwm/slstatus-config.mk
-    # ~/.bash_profile: bash_profile
-    # ~/.bashrc: bashrc
-    # ~/.config/fish: fish
-    # ~/.config/gcloud: gcloud
-    # ~/.config/omf: omf
-    # ~/.config/sway: sway
-    # ~/.config/waybar: waybar
-    # ~/.config/wofi: wofi
-    # ~/.profile: profile
-    # ~/.ssh/config:
-    #    path: ssh/config
-    #    create: true
+  ~/.config/nvim: nvim

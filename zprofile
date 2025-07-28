@@ -66,11 +66,12 @@ fi
 
 xmodmap ~/.Xmodmap
 export PATH="$HOME/.config/polybar/scripts:$PATH"
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Projects
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
-source ~/.local/bin/virtualenvwrapper.sh
+source ~/.env
+##### export WORKON_HOME=$HOME/.virtualenvs
+##### export PROJECT_HOME=$HOME/Projects
+##### export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+##### export VIRTUALENVWRAPPER_VIRTUALENV=/usr/sbin/virtualenv
+##### source /usr/sbin/virtualenvwrapper.sh
 
 if [[ -f "$HOME/.aliases.sh" ]]; then
     source "$HOME/.aliases.sh"

@@ -12,10 +12,11 @@ set encoding=utf-8
 let g:vimwiki_use_mouse=1
 let vimwiki_automatic_nested_syntaxes=1
 let g:vimwiki_folding='expr'
-"let vwiki_1={}
-"let vwiki_1.path_html=vwiki_1.path . '/html'
-"let vwiki_1.template_path=vwiki_1.path_html . '/templates'
-"let g:vimwiki_list=[vwiki_1]
+let vwiki_1={}
+let vwiki_1.path='$WIKI'
+let vwiki_1.path_html=vwiki_1.path . '/html'
+let vwiki_1.template_path=vwiki_1.path_html . '/templates'
+let g:vimwiki_list=[vwiki_1]
 
 colorscheme monokai-chris
 
@@ -76,3 +77,11 @@ endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 au BufRead,BufNewFile *.noml set filetype=noml
+au BufRead,BufNewFile *.njk set filetype=html
+au BufRead,BufNewFile *.njk set syntax=html
+au BufRead,BufNewFile *.liquid set filetype=html
+au BufRead,BufNewFile *.liquid set syntax=html
+au BufRead,BufNewFile *.hbs set filetype=html
+au BufRead,BufNewFile *.hbs set syntax=html
+au BufRead,BufNewFile *.mustache set filetype=html
+au BufRead,BufNewFile *.mustache set syntax=html
