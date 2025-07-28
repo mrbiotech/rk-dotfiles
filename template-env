@@ -12,6 +12,7 @@ export WINDOCS=''
 export ORG=''
 export ORGTODO=''
 export WIKI=''
+export VIMWIKI=$WIKI
 
 # For Go:
 export GOROOT=''
