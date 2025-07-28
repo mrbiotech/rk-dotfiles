@@ -1,7 +1,15 @@
 #!/bin/sh
 
-[[ -x `which exa` ]] && alias l='exa -ahlFG'
-[[ -x !(`which exa`) ]] && alias l='ls -ahlFG'
+[[ -x `which eza` ]] && alias l='eza -ahlF'
+[[ -x !(`which eza`) ]] && alias l='ls -ahlFG'
+
+alias sql='sqlite3'
+alias todo='f() {nohup emacs $ORGTODO > /dev/null 2>&1 & };f'
+alias todoterm='emacs -nw $ORGTODO'
+alias open='explorer.exe'
+alias neovide='f() {nohup neovide.exe $1 > /dev/null 2>&1 & };f'
+alias python='python3'
+alias doglog="git log --all --decorate --oneline --graph"
 
 alias randompassword="date +%s | gsha256sum | base64 | head -c 12 ; echo"
 alias servethis="python -m http.server 5150"

@@ -134,6 +134,7 @@ Generally overrides settings for any commands/options that have defaults of thei
 	2. VoidLinux
 	3. Ubuntu
 	4. Ubuntu running on WSL2 in Windows
+3. Use a non-Git-tracked .env file, if it exists, for path environment for local computer instead of including in git repo.
 
 ## History
 **[2022-06-26]** Replacing SpacEMACS with Doom Emacs - it's just faster. Adding config files for dwm, slstatus and dwm-flexipatch.

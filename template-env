@@ -1,0 +1,19 @@
+# For Python3 VirtualEnvs:
+export WORKON_HOME=''
+export PROJECT_HOME=''
+export VIRTUALENVWRAPPER_PYTHON=''
+export VIRTUALENVWRAPPER_VIRTUALENV=''
+export VIRTUALENVWRAPPER_PATH=''
+
+# WSL2 paths:
+export WINHOME=''
+export WINDLS=''
+export WINDOCS=''
+export ORG=''
+export ORGTODO=''
+export WIKI=''
+
+# For Go:
+export GOROOT=''
+export GOPATH=''
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

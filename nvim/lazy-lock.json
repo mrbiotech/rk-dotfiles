@@ -1,0 +1,15 @@
+{
+  "emmet-vim": { "branch": "master", "commit": "e98397144982d1e75b20d94d55a82de3ec8f648d" },
+  "incline.nvim": { "branch": "main", "commit": "0fd2d5a27504dba7fdc507a53275f22c081fe640" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "lualine.nvim": { "branch": "master", "commit": "a94fc68960665e54408fe37dcf573193c4ce82c9" },
+  "material.nvim": { "branch": "main", "commit": "0004ec60f91d581d47563a39f7dac62cb758f7ea" },
+  "neovim-gui-shim": { "branch": "master", "commit": "4d10bf3f68b9c0903bd1d9e456571d1d2ec16fde" },
+  "nvim-colorizer.lua": { "branch": "master", "commit": "16597180b4dd81fa3d23d88c4d2f1b49154f9479" },
+  "nvim-lspconfig": { "branch": "master", "commit": "4d3b3bb8815fbe37bcaf3dbdb12a22382bc11ebe" },
+  "nvim-navic": { "branch": "master", "commit": "f887d794a0f4594882814d7780980a949200a238" },
+  "nvim-tree.lua": { "branch": "master", "commit": "543ed3cac212dc3993ef9f042f6c0812e34ddd43" },
+  "nvim-web-devicons": { "branch": "master", "commit": "0422a19d9aa3aad2c7e5cca167e5407b13407a9d" },
+  "playtime.nvim": { "branch": "main", "commit": "c59f03d4b871fe9f7cb0a9e7f242a84237600996" },
+  "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" }
+}
