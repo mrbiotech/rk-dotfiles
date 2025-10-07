@@ -45,6 +45,8 @@ These dotfiles contain configurations for the following programs, which may need
 * PTPython
 * Doom Emacs
 * Vim
+* Neovim
+* Neovide
 
 ### Common scripts
 * Terminal color checks

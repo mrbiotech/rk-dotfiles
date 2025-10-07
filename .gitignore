@@ -5,3 +5,5 @@ tint2/*.backup.*
 vim/.netrwhist
 nohup.out
 .env
+vim/bundle/
+vim/bundle/*

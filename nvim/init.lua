@@ -3,7 +3,7 @@ package.path = package.path .. ';' .. vim.fn.stdpath('config') .. '/?.lua'
 -- Disable netrw for nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.g.mapleader="\\"
+vim.g.mapleader=" "
 
 local vim = vim
 local o = vim.opt
@@ -17,7 +17,8 @@ o.background = dark
 vim.cmd("set splitbelow")
 vim.cmd("set splitright")
 o.encoding="utf-8"
-vim.cmd("colorscheme material-oceanic")
+-- material-oceanic, habamax, material-darker, material-lighter,
+vim.cmd("colorscheme nordfox")
 --vim.cmd("set guifont=ZedMono NFP:h12")
 vim.cmd("set hlsearch")
 vim.cmd("set showmode")
@@ -45,7 +46,12 @@ require("nvim-tree").setup({
     sort = { sorter = "case_sensitive", },
     view = { width = 35, },
     renderer = { group_empty = true, },
-    filters = { dotfiles = true, },
+    filters = {
+        dotfiles = false,
+        custom = {
+            "^.git$",
+        },
+    },
 })
 
 local helpers = require 'incline.helpers'
@@ -53,7 +59,10 @@ local devicons = require 'nvim-web-devicons'
 require('incline').setup {
     window = {
         padding = 0,
-        margin = { horizontal = 0 },
+        margin = { vertical = 1 },
+    },
+    hide = {
+        cursorline = true,
     },
     render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')

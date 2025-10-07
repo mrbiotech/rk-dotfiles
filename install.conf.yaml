@@ -89,4 +89,5 @@
     ~/.zprofile: zprofile
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
-  ~/.config/nvim: nvim
+    ~/.config/nvim: nvim
+    ~/.config/doom: doom
