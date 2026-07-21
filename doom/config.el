@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "RobotoMono Nerd Font Propo" :size 14 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "RobotoMono Nerd Font Propo" :size 24))
+(setq doom-font (font-spec :family "RobotoMonoNerdFont" :size 14 :weight 'medium)
+      doom-variable-pitch-font (font-spec :family "RobotoMonoNerdFont" :size 24))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -32,7 +32,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-opera)
+(setq doom-theme 'doom-opera
+      doom-themes-treemacs-enable-variable-pitch nil)
 
 (setq solaire-global-mode +1)
 
@@ -42,8 +43,16 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "/mnt/c/Users/richk/iCloudDrive/Info/org/")
+(setq org-directory "/home/richk/Info/org/"
+      org-agenda-files '(
+                         "/home/richk/Info/org/"
+                         "/home/richk/void-projects/"
+                         )
+      user-full-name "Rich Kulesus, PhD"
+      user-mail-address "rkulesus@pel-freez.com")
 
+(add-hook! rainbow-mode-hook
+           (hl-line-mode (if rainbow-mode -1 +1)))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -76,3 +85,34 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Settings derived from https://hieuphay.com/doom-emacs-config:
+(setq-default abbrev-mode t)
+(pixel-scroll-precision-mode t)
+
+;; Open links with Chrome instead of the EMACS-native browser:
+(setq browse-url-browser-function 'browse-url-chrome)
+
+;;(use-package! doom-modeline
+;;  :config
+;;  (setq doom-modeline-persp-name t))
+
+(use-package! nerd-icons-ibuffer
+  :ensure t
+  :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
+
+(use-package! nerd-icons
+  :custom
+  (doom-modeline-major-mode-icon t))
+
+(use-package! olivetti
+  :config
+  (setq-default olivetti-body-width 130)
+  (add-hook 'mixed-pitch-mode-hook (lambda () (setq-local olivetti-body-width 80))))
+
+;;(use-package! auto-olivetti
+;;  :custom
+;;  (auto-olivetti-enabled-modes '(text-mode prog-mode helpful-mode ibuffer-mode image-mode))
+;;  :config
+;;  (auto-olivetti-mode))
+

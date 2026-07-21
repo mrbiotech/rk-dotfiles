@@ -4,6 +4,10 @@ package.path = package.path .. ';' .. vim.fn.stdpath('config') .. '/?.lua'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader=" "
+vim.g.maplocalleader=","
+vim.g.markdown_folding = 1
+vim.opt_local.foldmethod = "expr"
+vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 local vim = vim
 local o = vim.opt
@@ -17,8 +21,9 @@ o.background = dark
 vim.cmd("set splitbelow")
 vim.cmd("set splitright")
 o.encoding="utf-8"
--- material-oceanic, habamax, material-darker, material-lighter,
-vim.cmd("colorscheme nordfox")
+-- material-oceanic, habamax, material-darker, material-lighter, nightfox, terafox, unokai, zephyr
+--vim.cmd("colorscheme kanagawa-wave")
+vim.cmd("colorscheme miasma")
 --vim.cmd("set guifont=ZedMono NFP:h12")
 vim.cmd("set hlsearch")
 vim.cmd("set showmode")
@@ -81,6 +86,15 @@ require('incline').setup {
         }
     end
 }
+
+-- For Treesitter-based folding:
+vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.wo[0][0].foldmethod = 'expr'
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'py' },
+    callback = function() vim.treesitter.start() end,
+})
+
 -- Ctrl+N to open NVim Tree
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<CR>')
 

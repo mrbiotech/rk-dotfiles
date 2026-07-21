@@ -6,7 +6,7 @@ return {
         ---@type snacks.Config
         opts = {
             bigfile = { enabled = true },
-            dim = { enabled = true},
+            dim = { enabled = true },
             dashboard = {
                 ---@class snacks.dashboard.Config
                 ---@field enabled? boolean
@@ -113,6 +113,14 @@ return {
         lazy = false,
     },
     {
+        'nvim-telescope/telescope.nvim', version = '*',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            -- optional but recommended:
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        },
+    },
+    {
         'mattn/emmet-vim',
         lazy = false,
     },
@@ -125,6 +133,18 @@ return {
         config = function()
             require('nvim-tree').setup {}
         end,
+    },
+    {
+        "vimwiki/vimwiki",
+        init = function()
+	        local l = {}
+	        l.path = '/home//richk/Info/vimwiki'
+	        l.syntax = 'default'
+	        l.path_html = l.path .. '/html'
+	        l.template_path = l.path_html .. '/templates'
+            vim.g.vimwiki_list = { l, }
+        end,
+        -- end,
     },
     -- Experimenting with colorschemes:
     { 'EdenEast/nightfox.nvim' },
@@ -181,8 +201,8 @@ return {
         })
         end
     },
-    { 'ray-x/aurora' },
     -- END Experimenting with colorschemes.
+    { 'folke/which-key.nvim' },
     {
         'rktjmp/playtime.nvim',
         lazy = false,
@@ -196,30 +216,66 @@ return {
         config = function()
             require('lualine').setup {
                 options = {
-                    -- wombat, material, onelight, onedark, powerline, solarized_dark, 
-                    theme = 'wombat',
+                    -- wombat, horizon, material, onedark, powerline, powerline_dark, solarized_dark,
+                    -- gruvbox_dark, gruvbox_material, jellybeans, modus-vivendi, nightfly, OceanicNext,
+                    -- palenight, papercolor_dark, seoul256, tomorrow_night
+                    -- solarized_light, onelight, ayu_light, gruvbox_light, iceberg_light, Tomorrow
+                    theme = 'onedark',
                     icons_enabled = true,
                     always_show_tabline = false,
                     globalstatus = false,
-                    section_separators = { left = '', right = '' },
-                    component_separators = { left = '', right = '' },
+                    -- section_separators = { left = '', right = '' },
+                    -- component_separators = { left = '', right = '' },
+                    section_separators = { left = '', right = '' },
+                    component_separators = { left = '', right = '' },
                 },
                 sections = {
-                    lualine_a = {'mode'},
-                    lualine_b = {'branch','diff','diagnostics'},
+                    lualine_a = {
+                        'mode',
+                    },
+                    lualine_b = {
+                        'branch',
+                        'diff',
+                        'diagnostics',
+                        {
+                            require("noice").api.statusline.mode.get,
+                            cond = require("noice").api.statusline.mode.has,
+                            color = { fg = "#ffffff" },
+                        },
+                    },
                     lualine_c = {'filename'},
-                    lualine_x = {'encoding','fileformat','filetype'},
+                    lualine_x = {
+                        'encoding',
+                        'fileformat',
+                        'filetype',
+                    },
                     lualine_y = {'progress'},
                     lualine_z = {'location'},
                 },
                 inactive_sections = {},
                 tabline = {
-                    lualine_a = {'buffers'},
-                    lualine_b = {'branch'},
+                    lualine_a = {
+                        {
+                            'buffers',
+                            -- XXXX separator = { right = '' },
+                            -- !!!! separator = { right = '' },
+                            -- XXXX separator = { right = '' },
+                            -- XXXX separator = { right = '' },
+                            -- padding = { left = 1, right = 1},
+                            ''
+                        }
+                    },
+                    lualine_b = {},
                     lualine_c = {},
                     lualine_x = {},
                     lualine_y = {},
-                    lualine_z = {},
+                    lualine_z = {
+                        {
+                            'branch',
+                            separator = { left = '' },
+                            padding = { left = 1, right = 1},
+                        },
+                    },
                 },
                 winbar = {},
                 inactive_winbar = {},
@@ -282,6 +338,10 @@ return {
                     inc_rename = false,
                     lsp_doc_border = true,
                 },
+                routes = {
+                    view = "notify",
+                    filter = { event = "msg_showmode" },
+                },
             })
         end
     },
@@ -319,8 +379,27 @@ return {
             })
         end
     },
+    { 'saghen/blink.lib' },
     {
-        'seandewar/actually-doom.nvim',
+        'saghen/blink.cmp',
+        dependencies = {
+            'saghen/blink.lib',
+            'rafamadriz/friendly-snippets',
+        },
+        -- build = 'cargo build --release',
+        build = function ()
+            require('blink.cmp').build():pwait()
+        end,
+
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            keymap = { preset = 'default' },
+            completion = { documentation = { auto_show = true } },
+            sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+            -- fuzzy = { implementation = "lua" },
+            fuzzy = { implementation = "lua" },
+        },
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -372,5 +451,9 @@ return {
                 indent = { enable = true },
             })
         end
+    },
+    {
+        "mason-org/mason.nvim",
+        opts = {},
     },
 }

@@ -8,7 +8,8 @@
 	email = richkulesus@gmail.com
 [core]
 	editor = vim
-	excludesfile = /Users/richk/.gitignore_global
+	excludesfile = ${HOME}/.gitignore_global
+	pager = bat
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -17,3 +18,9 @@
 	trustExitCode = true
 [init]
 	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

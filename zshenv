@@ -17,4 +17,9 @@ export PASTEL_COLOR_MODE=24bit
 source ~/.aliases.sh
 . "$HOME/.cargo/env"
 
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+if [ -e /home/richk/.nix-profile/etc/profile.d/nix.sh ]; then . /home/richk/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Homebrew, so we can install Microsoft sqlcmd:
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+
