@@ -106,6 +106,7 @@ return {
             -- scroll = { enabled = true },
             statuscolumn = { enabled = true },
             words = { enabled = true },
+            image = { enabled = false },
         },
     },
     {
@@ -138,6 +139,7 @@ return {
         "vimwiki/vimwiki",
         init = function()
 	        local l = {}
+<<<<<<< HEAD
 	        l.path = '/home//richk/Info/vimwiki'
 	        l.syntax = 'default'
 	        l.path_html = l.path .. '/html'
@@ -145,6 +147,16 @@ return {
             vim.g.vimwiki_list = { l, }
         end,
         -- end,
+=======
+	        l.path = '/mnt/c/Users/richk/iCloudDrive/Info/vimwiki'
+	        l.syntax = 'default'
+	        l.path_html = l.path .. '/html'
+	        l.template_path = l.path_html .. '/templates'
+            l.auto_toc=1
+            l.auto_export=1
+            vim.g.vimwiki_list = { l, }
+        end,
+>>>>>>> editors
     },
     -- Experimenting with colorschemes:
     { 'EdenEast/nightfox.nvim' },
@@ -173,7 +185,7 @@ return {
                 variables = false,
             },
             contrast = {
-                enable = false,
+                enable = true,
                 terminal = true,
                 filetypes = {},
             },
@@ -187,7 +199,7 @@ return {
                 eob_lines = true
             },
             style = {
-                name = 'moonlight', -- Themes: dracula, dracula_blood, deepocean, darker, earlysummer, earlysummer_lighter, palenight, monokai, mariana, emerald, middlenight_blue
+                name = 'moonlight',
                 disable = {},
                 fix = true,
                 darker_contrast = false,
@@ -203,10 +215,33 @@ return {
     },
     -- END Experimenting with colorschemes.
     { 'folke/which-key.nvim' },
+<<<<<<< HEAD
+=======
+    -- {
+    --     "hedyhli/outline.nvim",
+    --     lazy = true,
+    --     cmd = { "Outline", "OutlineOpen" },
+    --     keys = {
+    --         { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+    --     },
+    --     opts = {},
+    -- },
+>>>>>>> editors
     {
         'rktjmp/playtime.nvim',
         lazy = false,
-        config = true,
+        config = false,
+    },
+    {
+        'jim-fx/sudoku.nvim',
+        cmd = "Sudoku",
+        config = function()
+            require("sudoku").setup({
+                mappings = {
+                    { key = "c", action = "clear_cell" }
+                }
+            })
+        end
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -216,6 +251,7 @@ return {
         config = function()
             require('lualine').setup {
                 options = {
+<<<<<<< HEAD
                     -- wombat, horizon, material, onedark, powerline, powerline_dark, solarized_dark,
                     -- gruvbox_dark, gruvbox_material, jellybeans, modus-vivendi, nightfly, OceanicNext,
                     -- palenight, papercolor_dark, seoul256, tomorrow_night
@@ -249,11 +285,30 @@ return {
                         'fileformat',
                         'filetype',
                     },
+=======
+                    icons_enabled = true,
+                    -- wombat, horizon, material, onedark, powerline, powerline_dark, solarized_dark, gruvbox_dark, gruvbox_material
+                    -- jellybeans, modus-vivendi, nightfly, OceanicNext, palenight, papercolor_dark, seoul256, tomorrow_night
+                    -- solarized_light, onelight, ayu_light, gruvbox_light, iceberg_light, Tomorrow
+                    theme = 'horizon',
+                    icons_enabled = true,
+                    always_show_tabline = false,
+                    globalstatus = true,
+                    section_separators = { left = '', right = '' },
+                    component_separators = { left = '', right = '' },
+                },
+                sections = {
+                    lualine_a = {'mode',},
+                    lualine_b = {'branch','diff','diagnostics'},
+                    lualine_c = {'filename'},
+                    lualine_x = {'encoding','lsp_status','fileformat','filetype'},
+>>>>>>> editors
                     lualine_y = {'progress'},
                     lualine_z = {'location'},
                 },
                 inactive_sections = {},
                 tabline = {
+<<<<<<< HEAD
                     lualine_a = {
                         {
                             'buffers',
@@ -265,6 +320,9 @@ return {
                             ''
                         }
                     },
+=======
+                    lualine_a = {'buffers'},
+>>>>>>> editors
                     lualine_b = {},
                     lualine_c = {},
                     lualine_x = {},
@@ -283,11 +341,6 @@ return {
             }
         end,
     },
-    -- {
-    --     'beauwilliams/statusline.lua',
-    --     lazy = false,
-    --     config = false,
-    -- },
     {
         'SmiteshP/nvim-navic',
         dependencies = { 'neovim/nvim-lspconfig' },
@@ -322,8 +375,46 @@ return {
         'folke/noice.nvim',
         event = 'VeryLazy',
         opts = {},
+        keys = {
+            { "<leader>sn", "", desc = "+noice"},
+            { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
+            { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
+            { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
+            { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
+            { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
+            { "<leader>snt", function() require("noice").cmd("pick") end, desc = "Noice Picker (Telescope/FzfLua)" },
+            { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll Forward", mode = {"i", "n", "s"} },
+            { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll Backward", mode = {"i", "n", "s"}},
+        },
         config = function()
             require('noice').setup({
+                routes = {
+                    {
+                        view = "mini",
+                        filter = {
+                            event = "msg_showmode",
+                            any = {
+                                { find = "%d+L, %d+B" },
+                                { find = "; after #%d+" },
+                                { find = "; before #%d+" },
+                            },
+                        },
+                    },
+                },
+                hover = {
+                    enabled = true,
+                    silent = false,
+                },
+                notify = {
+                    enabled = true,
+                    view = "notify",
+                },
+                popupmenu = {
+                    enabled = true,
+                    ---@type 'nui'|'cmp'
+                    backend = "nui",
+                    ---@type Noice PopupmenuItemKind|false
+                },
                 lsp = {
                     override = {
                         ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
@@ -343,7 +434,7 @@ return {
                     filter = { event = "msg_showmode" },
                 },
             })
-        end
+        end,
     },
     {
         'eandrju/cellular-automaton.nvim',
@@ -367,8 +458,9 @@ return {
             vim.keymap.set('n', '<leader>da', function() require('duck').cook_all() end, {})
         end
     },
-    -- {'AndrewRadev/typewriter.vim'},
+    { 'saghen/blink.lib' },
     {
+<<<<<<< HEAD
         'jim-fx/sudoku.nvim',
         cmd = 'Sudoku',
         config = function()
@@ -381,24 +473,37 @@ return {
     },
     { 'saghen/blink.lib' },
     {
+=======
+>>>>>>> editors
         'saghen/blink.cmp',
         dependencies = {
             'saghen/blink.lib',
             'rafamadriz/friendly-snippets',
         },
+<<<<<<< HEAD
         -- build = 'cargo build --release',
         build = function ()
             require('blink.cmp').build():pwait()
+=======
+        build = function()
+            require('blink.cmp').build():wait(60000)
+>>>>>>> editors
         end,
 
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
         opts = {
+<<<<<<< HEAD
             keymap = { preset = 'default' },
             completion = { documentation = { auto_show = true } },
             sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
             -- fuzzy = { implementation = "lua" },
             fuzzy = { implementation = "lua" },
+=======
+            completion = { documentation = { auto_show = true } },
+            sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+            fuzzy = { implementation = "rust" },
+>>>>>>> editors
         },
     },
     {
@@ -432,6 +537,8 @@ return {
                     'liquid',
                     'mermaid',
                     'nix',
+                    'norg',
+                    'norg_meta',
                     'python',
                     'r',
                     'regex',
