@@ -1,16 +1,12 @@
 #!/bin/sh
 
-<<<<<<< HEAD
-[[ -x `which eza` ]] && alias l='eza -ahlF auto'
 [[ -x `which eza` ]] && alias lg='eza -ahlF auto --git'
 [[ -x `which eza` ]] && alias lr='eza -ahlF auto --git -s modified'
 [[ -x `which eza` ]] && alias lc='eza -ahlF auto --git -s created'
 [[ -x `which eza` ]] && alias lcd='eza -ahloF auto --git --loc --icons'
 [[ -x `which eza` ]] && alias lt='eza -T --loc --icons --git'
 [[ -x `which eza` ]] && alias lsum='eza --code --icons'
-=======
 [[ -x `which eza` ]] && alias l='eza -ahlF --classify=auto'
->>>>>>> editors
 [[ -x !(`which eza`) ]] && alias l='ls -ahlFG'
 
 alias sql='sqlite3'

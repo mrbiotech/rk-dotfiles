@@ -5,12 +5,9 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader=" "
 vim.g.maplocalleader=","
-<<<<<<< HEAD
 vim.g.markdown_folding = 1
 vim.opt_local.foldmethod = "expr"
 vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-=======
->>>>>>> editors
 
 local vim = vim
 local o = vim.opt
@@ -24,14 +21,8 @@ o.background = dark
 vim.cmd("set splitbelow")
 vim.cmd("set splitright")
 o.encoding="utf-8"
-<<<<<<< HEAD
--- material-oceanic, habamax, material-darker, material-lighter, nightfox, terafox, unokai, zephyr
---vim.cmd("colorscheme kanagawa-wave")
-vim.cmd("colorscheme miasma")
-=======
 -- miasma, material-oceanic, habamax, material-darker, material-lighter, nordfox, retrobox, terabox, unokai, zephyr
 vim.cmd("colorscheme retrobox")
->>>>>>> editors
 --vim.cmd("set guifont=ZedMono NFP:h12")
 vim.cmd("set hlsearch")
 vim.cmd("set showmode")

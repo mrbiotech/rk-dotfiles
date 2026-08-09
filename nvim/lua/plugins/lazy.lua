@@ -139,15 +139,6 @@ return {
         "vimwiki/vimwiki",
         init = function()
 	        local l = {}
-<<<<<<< HEAD
-	        l.path = '/home//richk/Info/vimwiki'
-	        l.syntax = 'default'
-	        l.path_html = l.path .. '/html'
-	        l.template_path = l.path_html .. '/templates'
-            vim.g.vimwiki_list = { l, }
-        end,
-        -- end,
-=======
 	        l.path = '/mnt/c/Users/richk/iCloudDrive/Info/vimwiki'
 	        l.syntax = 'default'
 	        l.path_html = l.path .. '/html'
@@ -156,7 +147,6 @@ return {
             l.auto_export=1
             vim.g.vimwiki_list = { l, }
         end,
->>>>>>> editors
     },
     -- Experimenting with colorschemes:
     { 'EdenEast/nightfox.nvim' },
@@ -215,18 +205,6 @@ return {
     },
     -- END Experimenting with colorschemes.
     { 'folke/which-key.nvim' },
-<<<<<<< HEAD
-=======
-    -- {
-    --     "hedyhli/outline.nvim",
-    --     lazy = true,
-    --     cmd = { "Outline", "OutlineOpen" },
-    --     keys = {
-    --         { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
-    --     },
-    --     opts = {},
-    -- },
->>>>>>> editors
     {
         'rktjmp/playtime.nvim',
         lazy = false,
@@ -251,41 +229,6 @@ return {
         config = function()
             require('lualine').setup {
                 options = {
-<<<<<<< HEAD
-                    -- wombat, horizon, material, onedark, powerline, powerline_dark, solarized_dark,
-                    -- gruvbox_dark, gruvbox_material, jellybeans, modus-vivendi, nightfly, OceanicNext,
-                    -- palenight, papercolor_dark, seoul256, tomorrow_night
-                    -- solarized_light, onelight, ayu_light, gruvbox_light, iceberg_light, Tomorrow
-                    theme = 'onedark',
-                    icons_enabled = true,
-                    always_show_tabline = false,
-                    globalstatus = false,
-                    -- section_separators = { left = '', right = '' },
-                    -- component_separators = { left = '', right = '' },
-                    section_separators = { left = '', right = '' },
-                    component_separators = { left = '', right = '' },
-                },
-                sections = {
-                    lualine_a = {
-                        'mode',
-                    },
-                    lualine_b = {
-                        'branch',
-                        'diff',
-                        'diagnostics',
-                        {
-                            require("noice").api.statusline.mode.get,
-                            cond = require("noice").api.statusline.mode.has,
-                            color = { fg = "#ffffff" },
-                        },
-                    },
-                    lualine_c = {'filename'},
-                    lualine_x = {
-                        'encoding',
-                        'fileformat',
-                        'filetype',
-                    },
-=======
                     icons_enabled = true,
                     -- wombat, horizon, material, onedark, powerline, powerline_dark, solarized_dark, gruvbox_dark, gruvbox_material
                     -- jellybeans, modus-vivendi, nightfly, OceanicNext, palenight, papercolor_dark, seoul256, tomorrow_night
@@ -302,13 +245,11 @@ return {
                     lualine_b = {'branch','diff','diagnostics'},
                     lualine_c = {'filename'},
                     lualine_x = {'encoding','lsp_status','fileformat','filetype'},
->>>>>>> editors
                     lualine_y = {'progress'},
                     lualine_z = {'location'},
                 },
                 inactive_sections = {},
                 tabline = {
-<<<<<<< HEAD
                     lualine_a = {
                         {
                             'buffers',
@@ -317,12 +258,9 @@ return {
                             -- XXXX separator = { right = '' },
                             -- XXXX separator = { right = '' },
                             -- padding = { left = 1, right = 1},
-                            ''
+                            -- ''
                         }
                     },
-=======
-                    lualine_a = {'buffers'},
->>>>>>> editors
                     lualine_b = {},
                     lualine_c = {},
                     lualine_x = {},
@@ -460,7 +398,6 @@ return {
     },
     { 'saghen/blink.lib' },
     {
-<<<<<<< HEAD
         'jim-fx/sudoku.nvim',
         cmd = 'Sudoku',
         config = function()
@@ -473,37 +410,23 @@ return {
     },
     { 'saghen/blink.lib' },
     {
-=======
->>>>>>> editors
         'saghen/blink.cmp',
         dependencies = {
             'saghen/blink.lib',
             'rafamadriz/friendly-snippets',
         },
-<<<<<<< HEAD
-        -- build = 'cargo build --release',
-        build = function ()
-            require('blink.cmp').build():pwait()
-=======
         build = function()
             require('blink.cmp').build():wait(60000)
->>>>>>> editors
         end,
 
         ---@module 'blink.cmp'
         ---@type blink.cmp.Config
         opts = {
-<<<<<<< HEAD
             keymap = { preset = 'default' },
             completion = { documentation = { auto_show = true } },
             sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
             -- fuzzy = { implementation = "lua" },
             fuzzy = { implementation = "lua" },
-=======
-            completion = { documentation = { auto_show = true } },
-            sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
-            fuzzy = { implementation = "rust" },
->>>>>>> editors
         },
     },
     {

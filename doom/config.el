@@ -43,19 +43,13 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-<<<<<<< HEAD
-(setq org-directory "/home/richk/Info/org/"
+(setq org-directory "~/Info/org/"
       org-agenda-files '(
-                         "/home/richk/Info/org/"
-                         "/home/richk/void-projects/"
+                         "~/Info/org/"
+                         "~/void-projects/"
                          )
       user-full-name "Rich Kulesus, PhD"
       user-mail-address "rkulesus@pel-freez.com")
-=======
-(setq org-directory "/mnt/c/Users/richk/iCloudDrive/Info/org/"
-      user-full-name "Rich Kulesus, PhD"
-      user-mail-address "richkulesus@gmail.com")
->>>>>>> editors
 
 (add-hook! rainbow-mode-hook
            (hl-line-mode (if rainbow-mode -1 +1)))
@@ -92,7 +86,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-<<<<<<< HEAD
 ;; Settings derived from https://hieuphay.com/doom-emacs-config:
 (setq-default abbrev-mode t)
 (pixel-scroll-precision-mode t)
@@ -104,11 +97,6 @@
 ;;  :config
 ;;  (setq doom-modeline-persp-name t))
 
-=======
-(setq-default abbrev-mode t)
-(pixel-scroll-precision-mode t)
-
->>>>>>> editors
 (use-package! nerd-icons-ibuffer
   :ensure t
   :hook (ibuffer-mode . nerd-icons-ibuffer-mode))
@@ -117,21 +105,3 @@
   :custom
   (doom-modeline-major-mode-icon t))
 
-<<<<<<< HEAD
-(use-package! olivetti
-  :config
-  (setq-default olivetti-body-width 130)
-  (add-hook 'mixed-pitch-mode-hook (lambda () (setq-local olivetti-body-width 80))))
-
-;;(use-package! auto-olivetti
-;;  :custom
-;;  (auto-olivetti-enabled-modes '(text-mode prog-mode helpful-mode ibuffer-mode image-mode))
-;;  :config
-;;  (auto-olivetti-mode))
-
-=======
-;; (use-package! olivetti
-;;   :config
-;;   (setq-default olivetti-body-width 130)
-;;   (add-hook 'mixed-pitch-mode-hook (lambda () (setq-local olivetti-body-width 80))))
->>>>>>> editors
