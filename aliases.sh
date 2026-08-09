@@ -1,14 +1,12 @@
 #!/bin/sh
 
-[[ -x `which eza` ]] && alias l='eza -ahlF'
+[[ -x `which eza` ]] && alias l='eza -ahlF --classify=auto'
 [[ -x !(`which eza`) ]] && alias l='ls -ahlFG'
 
 alias sql='sqlite3'
 alias todo='f() {nohup emacs $ORGTODO > /dev/null 2>&1 & };f'
 alias todoterm='emacs -nw $ORGTODO'
 alias open='explorer.exe'
-alias typora='/mnt/c/Users/Program\ Files/Typora/Typora.exe'
-alias neovide='f() {nohup neovide.exe $1 > /dev/null 2>&1 & };f'
 alias python='python3'
 alias doglog="git log --all --decorate --oneline --graph"
 
@@ -27,5 +25,44 @@ alias dockerkill='dockerstop && dockerdestroy && docker volume prune -f'
 alias dockerls='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Networks}}\t{{.Ports}}"'
 alias dockerstop='docker ps -q | xargs -I {} docker stop {}'
 alias dockerup='docker-compose up -d'
+
+# Other helper functions
+extract-palette() { convert "$1" -resize 300x -dither None -colors "$2" txt: | tail -n +2 | tr -s ' ' | cut -d ' ' -f 3 | sort | uniq -c | sort -rn | tr -s ' ' | cut -d ' ' -f 3;}
+addh1() {
+    if [[ ! -x "$2" ]]; then
+        touch "$2"
+    fi
+    echo "# $1\n" >> $2
+}
+addh2() {
+    if [[ ! -x "$2" ]]; then
+        touch "$2"
+    fi
+    echo "\n\n## $1\n" >> $2
+}
+addh3() {
+    if [[ ! -x "$2" ]]; then
+        touch "$2"
+    fi
+    echo "\n\n### $1\n" >> $2
+}
+addh4() {
+    if [[ ! -x "$2" ]]; then
+        touch "$2"
+    fi
+    echo "\n\n#### $1\n" >> $2
+}
+addh5() {
+    if [[ ! -x "$2" ]]; then
+        touch "$2"
+    fi
+    echo "\n\n##### $1\n" >> $2
+}
+addh6() {
+    if [[ ! -x "$2" ]]; then
+        touch "$2"
+    fi
+    echo "\n\n###### $1\n" >> $2
+}
 
 # vim: set ts=8 sw=4 tw=0 nowrap :

@@ -6,7 +6,7 @@ return {
         ---@type snacks.Config
         opts = {
             bigfile = { enabled = true },
-            dim = { enabled = true},
+            dim = { enabled = true },
             dashboard = {
                 ---@class snacks.dashboard.Config
                 ---@field enabled? boolean
@@ -106,6 +106,7 @@ return {
             -- scroll = { enabled = true },
             statuscolumn = { enabled = true },
             words = { enabled = true },
+            image = { enabled = false },
         },
     },
     {
@@ -124,6 +125,19 @@ return {
         },
         config = function()
             require('nvim-tree').setup {}
+        end,
+    },
+    {
+        "vimwiki/vimwiki",
+        init = function()
+	        local l = {}
+	        l.path = '/mnt/c/Users/richk/iCloudDrive/Info/vimwiki'
+	        l.syntax = 'default'
+	        l.path_html = l.path .. '/html'
+	        l.template_path = l.path_html .. '/templates'
+            l.auto_toc=1
+            l.auto_export=1
+            vim.g.vimwiki_list = { l, }
         end,
     },
     -- Experimenting with colorschemes:
@@ -153,7 +167,7 @@ return {
                 variables = false,
             },
             contrast = {
-                enable = false,
+                enable = true,
                 terminal = true,
                 filetypes = {},
             },
@@ -167,7 +181,7 @@ return {
                 eob_lines = true
             },
             style = {
-                name = 'moonlight', -- Themes: dracula, dracula_blood, deepocean, darker, earlysummer, earlysummer_lighter, palenight, monokai, mariana, emerald, middlenight_blue
+                name = 'moonlight',
                 disable = {},
                 fix = true,
                 darker_contrast = false,
@@ -181,12 +195,32 @@ return {
         })
         end
     },
-    { 'ray-x/aurora' },
     -- END Experimenting with colorschemes.
+    { 'folke/which-key.nvim' },
+    -- {
+    --     "hedyhli/outline.nvim",
+    --     lazy = true,
+    --     cmd = { "Outline", "OutlineOpen" },
+    --     keys = {
+    --         { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
+    --     },
+    --     opts = {},
+    -- },
     {
         'rktjmp/playtime.nvim',
         lazy = false,
-        config = true,
+        config = false,
+    },
+    {
+        'jim-fx/sudoku.nvim',
+        cmd = "Sudoku",
+        config = function()
+            require("sudoku").setup({
+                mappings = {
+                    { key = "c", action = "clear_cell" }
+                }
+            })
+        end
     },
     {
         'nvim-lualine/lualine.nvim',
@@ -196,26 +230,29 @@ return {
         config = function()
             require('lualine').setup {
                 options = {
-                    -- wombat, material, onelight, onedark, powerline, solarized_dark, 
-                    theme = 'wombat',
+                    icons_enabled = true,
+                    -- wombat, horizon, material, onedark, powerline, powerline_dark, solarized_dark, gruvbox_dark, gruvbox_material
+                    -- jellybeans, modus-vivendi, nightfly, OceanicNext, palenight, papercolor_dark, seoul256, tomorrow_night
+                    -- solarized_light, onelight, ayu_light, gruvbox_light, iceberg_light, Tomorrow
+                    theme = 'horizon',
                     icons_enabled = true,
                     always_show_tabline = false,
-                    globalstatus = false,
+                    globalstatus = true,
                     section_separators = { left = '', right = '' },
                     component_separators = { left = '', right = '' },
                 },
                 sections = {
-                    lualine_a = {'mode'},
+                    lualine_a = {'mode',},
                     lualine_b = {'branch','diff','diagnostics'},
                     lualine_c = {'filename'},
-                    lualine_x = {'encoding','fileformat','filetype'},
+                    lualine_x = {'encoding','lsp_status','fileformat','filetype'},
                     lualine_y = {'progress'},
                     lualine_z = {'location'},
                 },
                 inactive_sections = {},
                 tabline = {
                     lualine_a = {'buffers'},
-                    lualine_b = {'branch'},
+                    lualine_b = {},
                     lualine_c = {},
                     lualine_x = {},
                     lualine_y = {},
@@ -227,11 +264,6 @@ return {
             }
         end,
     },
-    -- {
-    --     'beauwilliams/statusline.lua',
-    --     lazy = false,
-    --     config = false,
-    -- },
     {
         'SmiteshP/nvim-navic',
         dependencies = { 'neovim/nvim-lspconfig' },
@@ -266,8 +298,46 @@ return {
         'folke/noice.nvim',
         event = 'VeryLazy',
         opts = {},
+        keys = {
+            { "<leader>sn", "", desc = "+noice"},
+            { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
+            { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
+            { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
+            { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
+            { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
+            { "<leader>snt", function() require("noice").cmd("pick") end, desc = "Noice Picker (Telescope/FzfLua)" },
+            { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll Forward", mode = {"i", "n", "s"} },
+            { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll Backward", mode = {"i", "n", "s"}},
+        },
         config = function()
             require('noice').setup({
+                routes = {
+                    {
+                        view = "mini",
+                        filter = {
+                            event = "msg_showmode",
+                            any = {
+                                { find = "%d+L, %d+B" },
+                                { find = "; after #%d+" },
+                                { find = "; before #%d+" },
+                            },
+                        },
+                    },
+                },
+                hover = {
+                    enabled = true,
+                    silent = false,
+                },
+                notify = {
+                    enabled = true,
+                    view = "notify",
+                },
+                popupmenu = {
+                    enabled = true,
+                    ---@type 'nui'|'cmp'
+                    backend = "nui",
+                    ---@type Noice PopupmenuItemKind|false
+                },
                 lsp = {
                     override = {
                         ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
@@ -283,7 +353,7 @@ return {
                     lsp_doc_border = true,
                 },
             })
-        end
+        end,
     },
     {
         'eandrju/cellular-automaton.nvim',
@@ -307,20 +377,24 @@ return {
             vim.keymap.set('n', '<leader>da', function() require('duck').cook_all() end, {})
         end
     },
-    -- {'AndrewRadev/typewriter.vim'},
+    { 'saghen/blink.lib' },
     {
-        'jim-fx/sudoku.nvim',
-        cmd = 'Sudoku',
-        config = function()
-            require('sudoku').setup({
-                persist_settings = true,
-                persist_games = true,
-                default_mappings = true,
-            })
-        end
-    },
-    {
-        'seandewar/actually-doom.nvim',
+        'saghen/blink.cmp',
+        dependencies = {
+            'saghen/blink.lib',
+            'rafamadriz/friendly-snippets',
+        },
+        build = function()
+            require('blink.cmp').build():wait(60000)
+        end,
+
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+            completion = { documentation = { auto_show = true } },
+            sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+            fuzzy = { implementation = "rust" },
+        },
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -353,6 +427,8 @@ return {
                     'liquid',
                     'mermaid',
                     'nix',
+                    'norg',
+                    'norg_meta',
                     'python',
                     'r',
                     'regex',
@@ -372,5 +448,9 @@ return {
                 indent = { enable = true },
             })
         end
+    },
+    {
+        "mason-org/mason.nvim",
+        opts = {},
     },
 }
