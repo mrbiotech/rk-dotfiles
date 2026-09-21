@@ -140,6 +140,14 @@ Control Mod4 F12 :TakeToWorkspace 12
 # Window tiling shortcuts.
 Control Mod1 backslash     :ArrangeWindowsVertical
 Control Mod1 minus         :ArrangeWindowsStackLeft
+Shift Mod4 H               :MacroCmd {ResizeTo 50% 100%} {MoveTo 0% 0% TopLeft}
+Shift Mod4 K               :MacroCmd {ResizeTo 50% 100%} {MoveTo 50% 0% TopLeft}
+Shift Mod4 L               :MacroCmd {ResizeTo 100% 50%} {MoveTo 0% 0% TopLeft}
+Shift Mod4 J               :MacroCmd {ResizeTo 100% 50%} {MoveTo 0% 50% TopLeft}
+Control Mod4 Mod1 H        :MacroCmd {ResizeTo 50% 50%} {MoveTo 0% 0% TopLeft}
+Control Mod4 Mod1 K        :MacroCmd {ResizeTo 50% 50%} {MoveTo 50% 0% TopLeft}
+Control Mod4 Mod1 L        :MacroCmd {ResizeTo 50% 50%} {MoveTo 50% 50% TopLeft}
+Control Mod4 Mod1 J        :MacroCmd {ResizeTo 50% 50%} {MoveTo 0% 50% TopLeft}
 Shift Mod4 Left            :MacroCmd {ResizeTo 50% 100%} {MoveTo 0% 0% TopLeft}
 Shift Mod4 Right           :MacroCmd {ResizeTo 50% 100%} {MoveTo 50% 0% TopLeft}
 Shift Mod4 Up              :MacroCmd {ResizeTo 100% 50%} {MoveTo 0% 0% TopLeft}

@@ -24,44 +24,25 @@
 
 # Symlink my dotfiles
 - link:
-    ~/.alacritty.yml: alacritty.yml
     ~/.aliases.sh: aliases.sh
     ~/.config/alacritty/alacritty.yml: alacritty.yml
+    ~/.config/doom: doom
     ~/.config/dunst/dunstrc: dunstrc
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: dunstrc
-    ~/.config/i3: i3
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: i3
-    ~/.config/i3status: i3status
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: i3status
+    ~/.config/hypr: hypr
     ~/.config/kitty/kitty.conf: kitty.conf
+    ~/.config/niri: niri
+    ~/.config/noctalia: noctalia
+    ~/.config/nvim: nvim
     ~/.config/openbox: openbox
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: openbox
-    ~/.config/picom.conf: picom.conf.MINE
     ~/.config/peco/config.json: peco.json
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: picom.conf.MINE
     ~/.config/polybar: polybar
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: polybar
-    ~/.config/ranger: ranger
     ~/.config/sakura: sakura
     ~/.config/starship.toml: starship.toml
     ~/.config/tint2: tint2
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: tint2
+    ~/.config/waybar: waybar
     ~/.config/yabar: yabar
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path:  yabar
     ~/.config/yetanotherbar/config.ron: yetanotherbar.ron
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: yetanotherbar.ron
     ~/.config/yetanotherbar/style.css: yetanotherbar.style.css
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: yetanotherbar.style.css
     ~/.gitconfig: gitconfig
     ~/.irssi: irssi
     ~/.local/share/dwm/autostart.sh: autostart.sh
@@ -69,16 +50,9 @@
     ~/.config/ptpython/config.py: ptpython-config.py
     ~/.fluxbox: fluxbox
     ~/.pekwm: pekwm
-    ~/maintenance.sh:
-    #  if: '[ uname = Darwin ]'
-    #  path: maintenance.sh
     ~/.Xmodmap: Xmodmap
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: Xmodmap
     ~/.screenrc: screenrc
     ~/.slate: slate
-    #  if: '[ uname -a | grep -ic "microsoft-standard-WSL" = 0 ]'
-    #  path: stalonetrayrc
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
@@ -89,5 +63,3 @@
     ~/.zprofile: zprofile
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
-    ~/.config/nvim: nvim
-    ~/.config/doom: doom

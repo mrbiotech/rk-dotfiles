@@ -6,4 +6,4 @@ fi
 
 # mmaker -t Sakura -i -c FluxBox > menu-apps
 
-xdgmenumaker --format fluxbox --icons > "~/.fluxbox/menu-apps"
+xdgmenumaker --format fluxbox --icons > ~/.fluxbox/menu-apps

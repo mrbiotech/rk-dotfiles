@@ -20,6 +20,8 @@ fi
 export EDITOR='vim'
 export VISUAL='$EDITOR'
 export PAGER='less'
+export BROWSER='chromium'
+export TERMINAL='kitty'
 
 #
 # Language
