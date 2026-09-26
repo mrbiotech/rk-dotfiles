@@ -30,7 +30,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "thunar"
-local menu        = "noctalia msg panel-toggle control-center"
+local menu        = "noctalia msg panel-toggle launcher"
 
 
 -------------------
@@ -44,12 +44,12 @@ local menu        = "noctalia msg panel-toggle control-center"
 --
 hl.on("hyprland.start", function () 
   hl.exec_cmd("nm-applet")
-  -- hl.exec_cmd("waybar & hyprpaper")
   hl.exec_cmd("noctalia & hyprpaper")
-  hl.exec({
-      "exec-once",
-      "/usr/libexec/hyprpolkitagent"
-  })
+  lh.exec_cmd({"pipewire"})
+  lh.exec_cmd({"pipewire-pulse"})
+  lh.exec_cmd({"wireplumber"})
+  lh.exec_cmd({"/usr/libexec/hyprpolkitagent"})
+  lh.exec_cmd({"hypridle"})
 end)
 
 
@@ -188,6 +188,9 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 hl.config({
     dwindle = {
         preserve_split = true, -- You probably want this
+        smart_split    = true,
+        smart_resizing = true,
+
     },
 })
 
@@ -242,8 +245,7 @@ hl.config({
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
-    action = "workspace":w
-
+    action = "workspace"
 })
 
 -- Example per-device config
@@ -264,20 +266,33 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 
-:w
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + Space", hl.dsp.layout("togglesplit"))    -- dwindle only
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + h",     hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + l",     hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + k",     hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + j",     hl.dsp.focus({ direction = "down" }))
+
+-- Move selected window with mainMod + SHIFT + hjkl OR arrow keys:
+hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + up",    hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + down",  hl.dsp.window.move({ direction = "down" }))
+hl.bind(mainMod .. " + SHIFT + h",     hl.dsp.window.move({ direction = "left" }))
+hl.bind(mainMod .. " + SHIFT + l",     hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + k",     hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + j",     hl.dsp.window.move({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -296,8 +311,6 @@ hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
---
---
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
@@ -314,6 +327,22 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+-- Define the layouts you want to cycle through
+local layouts = { "dwindle", "master", "scrolling", "monocle" }
+local current_layout_index = 1
+
+hl.bind("SUPER + tab", function()
+  -- Move to the next layout in the list
+  current_layout_index = (current_layout_index % #layouts) + 1
+  local next_layout = layouts[current_layout_index]
+
+  -- Apply the layout globally via Hyprland's dispatch command
+  hl.dispatch("keyword", "general:layout " .. next_layout)
+  
+  -- Optional: Send a notification to confirm the change
+  hl.dispatch("exec", "notify-send 'Hyprland Layout' 'Switched to " .. next_layout .. "'")
+end)
 
 
 --------------------------------

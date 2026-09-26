@@ -32,6 +32,8 @@ return {
                         { icon = " ", key = "s", desc = "Restore Session", section = "session" },
                         { icon = "󱢡 ", key = "P", desc = "Playtime", action = ":Playtime curds-and-whey" },
                         { icon = " ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+                        { icon = "󱊈 ", key = "M", desc = "Mason", action = ":Mason", enabled = package.loaded.lazy ~= nil },
+                        { icon = " ", key = "T", desc = "TreeSitter", action = ":TSUpdate", enabled = package.loaded.lazy ~= nil },
                         { icon = " ", key = "q", desc = "Quit", action = ":qa" },
                     },
                     -- Used by the `header` section

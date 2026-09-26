@@ -1,7 +1,7 @@
 session.screen0.tab.placement:	TopLeft
 session.screen0.tab.width:	40
-session.screen0.titlebar.left:	Stick 
-session.screen0.titlebar.right:	Shade Minimize Maximize Close 
+session.screen0.titlebar.left:	Stick LHalf 
+session.screen0.titlebar.right:	RHalf Shade Minimize Maximize Close 
 session.screen0.clientMenu.usePixmap:	true
 session.screen0.window.focus.alpha:	255
 session.screen0.window.unfocus.alpha:	100
