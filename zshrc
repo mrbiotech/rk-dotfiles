@@ -42,6 +42,8 @@ function _completemarks {
 
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
+fpath=(~/.zsh/completions $fpath)
+autoload -Uz compinit
 
 dls () {
   # directory LS

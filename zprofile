@@ -47,35 +47,17 @@ typeset -gU cdpath fpath mailpath path
 path=(
   /usr/local/{bin,sbin}
   $HOME/.local/{bin,sbin}
-  $HOME/.emacs.d/bin
+  $HOME/.config/emacs/bin
   $path
 )
 
-#
-# Less
-#
-
-# Set the default Less options.
-# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
-# Remove -X to enable it.
-export LESS='-g -i -M -R -S -w -X -z-4'
-
-# Set the Less input preprocessor.
-# Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
-if (( $#commands[(i)lesspipe(|.sh)] )); then
-  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
-fi
+export PATH="$HOME/.config/polybar/scripts:$PATH"
 
 if command -v xmodmap >/dev/null 2>&1; then
     xmodmap ~/.Xmodmap
 fi
-export PATH="$HOME/.config/polybar/scripts:$PATH"
+
 source ~/.env
-##### export WORKON_HOME=$HOME/.virtualenvs
-##### export PROJECT_HOME=$HOME/Projects
-##### export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-##### export VIRTUALENVWRAPPER_VIRTUALENV=/usr/sbin/virtualenv
-##### source /usr/sbin/virtualenvwrapper.sh
 
 if [[ -f "$HOME/.aliases.sh" ]]; then
     source "$HOME/.aliases.sh"

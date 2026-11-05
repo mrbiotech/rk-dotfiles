@@ -45,9 +45,9 @@ local menu        = "noctalia msg panel-toggle launcher"
 hl.on("hyprland.start", function () 
   hl.exec_cmd("nm-applet")
   hl.exec_cmd("noctalia & hyprpaper")
-  lh.exec_cmd({"pipewire"})
-  lh.exec_cmd({"pipewire-pulse"})
-  lh.exec_cmd({"wireplumber"})
+  -- lh.exec_cmd({"pipewire"})
+  -- lh.exec_cmd({"wireplumber"})
+  -- lh.exec_cmd({"pipewire-pulse"})
   lh.exec_cmd({"/usr/libexec/hyprpolkitagent"})
   lh.exec_cmd({"hypridle"})
 end)
@@ -161,9 +161,9 @@ hl.animation({ leaf = "layersIn",      enabled = true,  speed = 4,    bezier = "
 hl.animation({ leaf = "layersOut",     enabled = true,  speed = 1.5,  bezier = "linear",       style = "fade" })
 hl.animation({ leaf = "fadeLayersIn",  enabled = true,  speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspaces",    enabled = true,  speed = 5,    bezier = "easeInOutCubic", style = "slide" })
+hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 5,    bezier = "easeInOutCubic", style = "slide" })
+hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 5,    bezier = "easeInOutCubic", style = "slide" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
@@ -298,9 +298,29 @@ hl.bind(mainMod .. " + SHIFT + j",     hl.dsp.window.move({ direction = "down" }
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+    hl.bind(mainMod .. " + " .. key,         hl.dsp.focus({ workspace = i}))
+    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+
+-- Switch between workspaces by Previous/Next:
+hl.bind(mainMod .. " + ALT + h",     hl.dsp.focus({ workspace = "r-1" }))
+hl.bind(mainMod .. " + ALT + l",     hl.dsp.focus({ workspace = "r+1" }))
+hl.bind(mainMod .. " + ALT + left",  hl.dsp.focus({ workspace = "r-1" }))
+hl.bind(mainMod .. " + ALT + right", hl.dsp.focus({ workspace = "r+1" }))
+
+-- Move current window to adjacent workspaces and focus follows:
+hl.bind(mainMod .. " + CTRL + ALT + h", function()
+    hl.dispatch(hl.dsp.window.move({ workspace = "r-1", follow = true }))
+end)
+hl.bind(mainMod .. " + CTRL + ALT + l", function()
+    hl.dispatch(hl.dsp.window.move({ workspace = "r+1", follow = true }))
+end)
+hl.bind(mainMod .. " + CTRL + ALT + left", function()
+    hl.dispatch(hl.dsp.window.move({ workspace = "r-1", follow = true }))
+end)
+hl.bind(mainMod .. " + CTRL + ALT + right", function()
+    hl.dispatch(hl.dsp.window.move({ workspace = "r+1", follow = true }))
+end)
 
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
@@ -327,6 +347,8 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+hl.bind("SUPER + mouse:273", hl.dsp.exec_cmd("kando"))
 
 -- Define the layouts you want to cycle through
 local layouts = { "dwindle", "master", "scrolling", "monocle" }

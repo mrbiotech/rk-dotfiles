@@ -398,7 +398,6 @@ return {
             vim.keymap.set('n', '<leader>da', function() require('duck').cook_all() end, {})
         end
     },
-    { 'saghen/blink.lib' },
     {
         'jim-fx/sudoku.nvim',
         cmd = 'Sudoku',
@@ -427,8 +426,7 @@ return {
             keymap = { preset = 'default' },
             completion = { documentation = { auto_show = true } },
             sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
-            -- fuzzy = { implementation = "lua" },
-            fuzzy = { implementation = "lua" },
+            fuzzy = { implementation = "rust" },
         },
     },
     {
